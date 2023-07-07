@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   inspect.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 17:35:43 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/07 20:49:56 by dongyshi         ###   ########.fr       */
+/*   Created: 2023/07/07 20:40:20 by dongyshi          #+#    #+#             */
+/*   Updated: 2023/07/07 20:41:14 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include "err.h"
-#include "inspect.h"
+#ifndef INSPECT_H
+#define INSPECT_H
 
-int main(int argc, char *argv[]) {
-    inspect_arg(argc, argv);
-    return (0);
-}
+void    inspect_arg(int argc, char *argv[]);
+
+#endif

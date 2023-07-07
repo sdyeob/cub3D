@@ -1,14 +1,14 @@
 NAME := cub3D
 CC := gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 RM = rm -rf
 
 LIB := libft.a
-LIB_DIR := /libft
+LIB_DIR := ./libft
 
 INCLUDES := includes
 
-SRCS := $(addprefix srcs/, main.c err.c )
+SRCS := $(addprefix srcs/, main.c err.c ) $(addprefix srcs/inspect/, inspect.c )
 OBJS := $(SRCS:.c=.o)
 
 all : $(NAME)
@@ -29,6 +29,7 @@ clean :
 
 fclean :
 	make clean
+	$(RM) $(LIB)
 	$(RM) $(NAME)
 
 re :

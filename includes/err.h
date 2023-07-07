@@ -6,8 +6,13 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:02:35 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/07 20:02:38 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/07 20:40:56 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ERR_H
+# define ERR_H
+
 void    err(const char *str);
+
+#endif
