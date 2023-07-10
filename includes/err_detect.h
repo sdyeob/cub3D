@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   err.h                                              :+:      :+:    :+:   */
+/*   err_detect.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:02:35 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/07 20:40:56 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/10 21:03:55 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERR_H
-# define ERR_H
+#ifndef ERR_DETECT_H
+# define ERR__DETECTH
 
-void    err(const char *str);
+void    err_detect(const char *str);
 
 #endif

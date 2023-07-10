@@ -8,7 +8,9 @@ LIB_DIR := ./libft
 
 INCLUDES := includes
 
-SRCS := $(addprefix srcs/, main.c err.c ) $(addprefix srcs/inspect/, inspect.c )
+SRCS := $(addprefix srcs/, main.c err_detect.c ) \
+		$(addprefix srcs/inspect/, inspect.c ) \
+		$(addprefix srcs/parsing/, parsing.c )
 OBJS := $(SRCS:.c=.o)
 
 all : $(NAME)

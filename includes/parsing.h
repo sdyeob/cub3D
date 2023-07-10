@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   err.c                                              :+:      :+:    :+:   */
+/*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 19:58:03 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/07 20:15:38 by dongyshi         ###   ########.fr       */
+/*   Created: 2023/07/10 16:36:30 by dongyshi          #+#    #+#             */
+/*   Updated: 2023/07/10 20:14:06 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "../libft/libft.h"
+#ifndef PARSING_H
+# define PARSING_H
 
-void    err(const char *str) {
-    write(2, "Error\n", 7);
-    write(2, str, ft_strlen(str));
-    write(2, "\n", 1);
-    exit(1);
-}
+#include "struct.h"
+
+int             is_identifier(char *line);
+void            get_identifier(t_identifier *identifier, int file_fd);
+
+
+#endif
