@@ -29,6 +29,7 @@ clean :
 
 fclean :
 	make clean
+	make -C $(LIB_DIR) fclean
 	$(RM) $(LIB)
 	$(RM) $(NAME)
 
