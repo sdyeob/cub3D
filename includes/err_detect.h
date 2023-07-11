@@ -6,12 +6,12 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:02:35 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/10 21:03:55 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/11 16:09:01 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERR_DETECT_H
-# define ERR__DETECTH
+# define ERR_DETECT_H
 
 void    err_detect(const char *str);
 
