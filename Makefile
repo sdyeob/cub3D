@@ -1,6 +1,6 @@
 NAME := cub3D
 CC := gcc
-CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra #-g -fsanitize=address
 RM = rm -rf
 
 LIB := libft.a
@@ -10,9 +10,9 @@ DYLD_LIBRARY_PATH := ./minilibx_opengl_20191021
 
 INCLUDES := includes
 
-SRCS := $(addprefix srcs/, main.c err_detect.c ) \
+SRCS := $(addprefix srcs/, main.c err_detect.c utils.c ) \
 		$(addprefix srcs/inspect/, inspect.c ) \
-		$(addprefix srcs/parsing/, parsing.c )
+		$(addprefix srcs/parsing/, parsing.c parsing_color.c )
 OBJS := $(SRCS:.c=.o)
 
 all : $(NAME)

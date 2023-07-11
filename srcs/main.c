@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:35:43 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/10 20:53:22 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/11 20:17:37 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@
 #include <stdio.h>
 
 #include <stdlib.h>
-
-// void    f(void) {
-//     system("leaks cub3D");
-// }
 
 void    init_map_inf(t_map_inf *map_inf)
 {
@@ -62,19 +58,15 @@ void    free_map_inf(t_map_inf *map_inf)
 }
 
 int main(int argc, char *argv[]) {
-    // atexit(f);
     int             file_fd;
-    t_map_inf       map_inf;
+       t_map_inf       map_inf;
 
     inspect_arg(argc, argv);
     file_fd = inspect_arg_file(argv[1]);
     init_map_inf(&map_inf);
     get_identifier(&(map_inf.identifier), file_fd);
     // map_inf = get_map_inf();
-    printf("%s\n", map_inf.identifier.e);
-    printf("%s\n", map_inf.identifier.w);
-    printf("%s\n", map_inf.identifier.s);
-    printf("%s\n", map_inf.identifier.n);
+    draw_cub3d(&map_inf);
     close(file_fd);
     free_map_inf(&map_inf);
     return (0);
