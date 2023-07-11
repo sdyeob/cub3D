@@ -5,6 +5,8 @@ RM = rm -rf
 
 LIB := libft.a
 LIB_DIR := ./libft
+LIBMLX := libmlx.a
+DYLD_LIBRARY_PATH := ./minilibx_opengl_20191021
 
 INCLUDES := includes
 
@@ -16,22 +18,28 @@ OBJS := $(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME) :: $(LIB)
+$(NAME) :: $(LIBMLX)
 $(NAME) :: $(OBJS)
-	$(CC) $(CFLAGS) $(LIB) -o $@ $^
+	$(CC) $(CFLAGS) $(LIB) $(LIBMLX) -framework OpenGL -framework Appkit -o $@ $^
 
 %.o : %.c
-	$(CC) $(CFLAGS) -I$(LIB_DIR) -I$(INCLUDES) -c -o $@ $<
+	$(CC) $(CFLAGS) -I$(DYLD_LIBRARY_PATH) -I$(LIB_DIR) -I$(INCLUDES) -c -o $@ $<
 
 $(LIB) :
 	make -C $(LIB_DIR) all
 	cp $(LIB_DIR)/$(LIB) $(LIB)
 
+$(LIBMLX) :
+	make -C $(DYLD_LIBRARY_PATH) all
+	cp $(DYLD_LIBRARY_PATH)/$(LIBMLX) $(LIBMLX)
+
 clean :
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(LIB) $(LIBMLX)
 
 fclean :
 	make clean
 	make -C $(LIB_DIR) fclean
+	make -C $(DYLD_LIBRARY_PATH) fclean
 	$(RM) $(LIB)
 	$(RM) $(NAME)
 
