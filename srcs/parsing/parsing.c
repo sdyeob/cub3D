@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:10:13 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/11 20:12:41 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/11 22:18:10 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,24 +69,26 @@ static void	inspect_xpm_extension(char *splited_line)
 	int	length;
 
 	length = ft_strlen(splited_line);
-	if (length < 5 || !(splited_line[length - 4] == '.' && splited_line[length - 3] == 'x' \
-		&& splited_line[length - 2] == 'p' && splited_line[length - 1] == 'm'))
+	if (length < 5 || !(splited_line[length - 4] == '.' \
+		&& splited_line[length - 3] == 'x' \
+		&& splited_line[length - 2] == 'p' \
+		&& splited_line[length - 1] == 'm'))
 		err_detect("Information is Wrong");
 }
 
-static int fill_identifier(t_identifier *identifier, \
-    char *splited_line, int status)
+static int	fill_identifier(t_identifier *identifier, \
+	char *splited_line, int status)
 {
 	remove_nl(splited_line);
 	if (status == 1 || status == 2 || status == 3 || status == 4)
 		inspect_xpm_extension(splited_line);
 	if (status == 1 && !identifier->n)
 		identifier->n = ft_substr(splited_line, 0, ft_strlen(splited_line));
-	else if (status == 2 && !identifier->w) 
+	else if (status == 2 && !identifier->w)
 		identifier->w = ft_substr(splited_line, 0, ft_strlen(splited_line));
-	else if (status == 3 && !identifier->e) 
+	else if (status == 3 && !identifier->e)
 		identifier->e = ft_substr(splited_line, 0, ft_strlen(splited_line));
-	else if (status == 4 && !identifier->s) 
+	else if (status == 4 && !identifier->s)
 		identifier->s = ft_substr(splited_line, 0, ft_strlen(splited_line));
 	else if (status == 5 && identifier->f[0] == -1)
 		get_color(identifier, splited_line, status);
@@ -97,7 +99,7 @@ static int fill_identifier(t_identifier *identifier, \
 	return (1);
 }
 
-static char **get_splited_line(int file_fd, int *status)
+static char	**get_splited_line(int file_fd, int *status)
 {
 	char	*line;
 	char	**splited_line;
@@ -110,7 +112,7 @@ static char **get_splited_line(int file_fd, int *status)
 			if (line[0] == '\n')
 			{
 				free(line);
-				continue;
+				continue ;
 			}
 			splited_line = ft_split(line, ' ');
 			if (inspect_splited_line(splited_line) != 2)

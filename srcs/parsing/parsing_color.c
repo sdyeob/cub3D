@@ -15,7 +15,7 @@
 #include "libft.h"
 #include "utils.h"
 
-static int	 this_is_color(char *splited_line, int idx);
+static int	this_is_color(char *splited_line, int idx);
 static void	get_color_inf(t_identifier *identifier, \
 	char *splited_line, int status);
 
@@ -28,7 +28,6 @@ void	get_color(t_identifier *identifier, char *splited_line, int status)
 	i = -1;
 	comma_cnt = 0;
 	length = 0;
-	remove_nl(splited_line);
 	while (splited_line[++i])
 	{
 		if (ft_isdigit(splited_line[i]))
@@ -63,7 +62,7 @@ static void	get_color_inf(t_identifier *identifier, \
 	}
 }
 
-static int	 this_is_color(char *splited_line, int idx)
+static int	this_is_color(char *splited_line, int idx)
 {
 	int	i;
 	int	comma_cnt;
