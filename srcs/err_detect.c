@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   err_detect.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 19:58:03 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/10 20:39:48 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/11 22:18:49 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 #include <stdlib.h>
 #include "../libft/libft.h"
 
-void    err_detect(const char *str) {
-    write(2, "Error\n", 7);
-    write(2, str, ft_strlen(str));
-    write(2, "\n", 1);
-    exit(1);
+void	err_detect(const char *str)
+{
+	write(2, "Error\n", 7);
+	write(2, str, ft_strlen(str));
+	write(2, "\n", 1);
+	exit(1);
 }
