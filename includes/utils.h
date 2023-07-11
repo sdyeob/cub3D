@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.h                                          :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 16:36:30 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/11 16:48:51 by dongyshi         ###   ########.fr       */
+/*   Created: 2023/07/11 16:47:20 by dongyshi          #+#    #+#             */
+/*   Updated: 2023/07/11 17:46:31 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSING_H
-# define PARSING_H
+#ifndef UTILS_H
+# define UTILS_H
 
-#include "struct.h"
-
-void    get_identifier(t_identifier *identifier, int file_fd);
-void    get_color(t_identifier *identifier, char *splited_line, int status);
-
+void    free_splited_line(char **splited_line);
+void    remove_nl(char *splited_line);
 
 #endif

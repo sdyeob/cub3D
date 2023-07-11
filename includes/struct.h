@@ -6,18 +6,12 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:54:59 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/07 21:24:25 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/11 17:03:53 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 #define STRUCT_H
-
-typedef struct s_vec
-{
-    double  x;
-    double  y;
-}   t_vec;
 
 typedef struct s_identifier
 {
