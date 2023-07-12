@@ -6,19 +6,16 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:35:43 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/11 20:17:37 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/12 19:54:33 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include "err.h"
 #include "inspect.h"
 #include "parsing.h"
 #include "struct.h"
-
-#include <stdio.h>
-
-#include <stdlib.h>
 
 void    init_map_inf(t_map_inf *map_inf)
 {
@@ -57,16 +54,18 @@ void    free_map_inf(t_map_inf *map_inf)
     }
 }
 
+#include <stdio.h>
+
 int main(int argc, char *argv[]) {
     int             file_fd;
-       t_map_inf       map_inf;
+    t_map_inf       map_inf;
 
     inspect_arg(argc, argv);
     file_fd = inspect_arg_file(argv[1]);
     init_map_inf(&map_inf);
     get_identifier(&(map_inf.identifier), file_fd);
-    // map_inf = get_map_inf();
-    draw_cub3d(&map_inf);
+    get_map_inf(&map_inf, file_fd);
+    // draw_cub3d(&map_inf);
     close(file_fd);
     free_map_inf(&map_inf);
     return (0);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   parsing_identifier.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:10:13 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/11 22:18:10 by sindong-yeo      ###   ########.fr       */
+/*   Updated: 2023/07/12 17:56:20 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	get_identifier(t_identifier *identifier, int file_fd)
 	}
 	free_splited_line(splited_line);
 	if (identifier_num != 6)
-		err_detect("Few or More identifier");
+		err_detect("Error : Few or More identifier");
+
 }
 
 static int	is_identifier(char *line)
@@ -73,14 +74,14 @@ static void	inspect_xpm_extension(char *splited_line)
 		&& splited_line[length - 3] == 'x' \
 		&& splited_line[length - 2] == 'p' \
 		&& splited_line[length - 1] == 'm'))
-		err_detect("Information is Wrong");
+		err_detect("Error : Information");
 }
 
 static int	fill_identifier(t_identifier *identifier, \
 	char *splited_line, int status)
 {
 	remove_nl(splited_line);
-	if (status == 1 || status == 2 || status == 3 || status == 4)
+	if (1 <= status && status <= 4)
 		inspect_xpm_extension(splited_line);
 	if (status == 1 && !identifier->n)
 		identifier->n = ft_substr(splited_line, 0, ft_strlen(splited_line));
@@ -116,14 +117,14 @@ static char	**get_splited_line(int file_fd, int *status)
 			}
 			splited_line = ft_split(line, ' ');
 			if (inspect_splited_line(splited_line) != 2)
-				err_detect("Identifier is Wrong");
+				err_detect("Error : Identifier");
 			*status = is_identifier(splited_line[0]);
 			if (*status == 0)
-				err_detect("Identifier is Wrong");
+				err_detect("Error : Identifier Or Information");
 			free(line);
 			return (splited_line);
 		}
 		else
-			err_detect("Few Map information");
+			err_detect("Error : Few Map information");
 	}
 }

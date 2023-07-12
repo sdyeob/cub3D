@@ -1,6 +1,6 @@
 NAME := cub3D
 CC := gcc
-CFLAGS = -Wall -Werror -Wextra #-g -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 RM = rm -rf
 
 LIB := libft.a
@@ -12,7 +12,7 @@ INCLUDES := includes
 
 SRCS := $(addprefix srcs/, main.c err_detect.c utils.c ) \
 		$(addprefix srcs/inspect/, inspect.c ) \
-		$(addprefix srcs/parsing/, parsing.c parsing_color.c )
+		$(addprefix srcs/parsing/, parsing_identifier.c parsing_color.c parsing_map.c )
 OBJS := $(SRCS:.c=.o)
 
 all : $(NAME)
