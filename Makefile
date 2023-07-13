@@ -12,7 +12,7 @@ INCLUDES := includes
 
 SRCS := $(addprefix srcs/, main.c err_detect.c utils.c ) \
 		$(addprefix srcs/inspect/, inspect.c ) \
-		$(addprefix srcs/parsing/, parsing_identifier.c parsing_color.c parsing_map.c )
+		$(addprefix srcs/parsing/, parsing_identifier.c parsing_color.c parsing_map.c parsing_map2.c map_list.c )
 OBJS := $(SRCS:.c=.o)
 
 all : $(NAME)
