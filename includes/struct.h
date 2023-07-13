@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 22:14:21 by sindong-yeo       #+#    #+#             */
-/*   Updated: 2023/07/11 22:19:59 by sindong-yeo      ###   ########.fr       */
+/*   Updated: 2023/07/13 14:40:39 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
+
+typedef struct s_map_list t_map_list;
+
+struct s_map_list
+{
+	char		*map_element;
+	t_map_list	*next;
+};
 
 typedef struct s_identifier {
 	char	*n;

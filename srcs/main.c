@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:35:43 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/12 19:54:33 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/13 15:26:37 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ void    free_map_inf(t_map_inf *map_inf)
         free(map_inf->map);
     }
 }
-
-#include <stdio.h>
 
 int main(int argc, char *argv[]) {
     int             file_fd;
