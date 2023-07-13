@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:46:26 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/13 15:24:51 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/13 19:05:14 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	get_map_inf(t_map_inf *map_inf, int file_fd)
 	tail = NULL;
 	first_reading(map_inf, file_fd, &head, &tail);
 	second_reading(map_inf, &head, &tail);
+	map_validity_check(map_inf);
 }
 
 static char	*skip_before_map_nl(int file_fd)
@@ -111,8 +112,7 @@ void	first_reading(t_map_inf *map_inf, int file_fd, \
 	{
 		if (line[0] == '\n')
 		{
-			free(line);
-			if (skip_after_map_nl(file_fd))
+			if (free(line), skip_after_map_nl(file_fd))
 				err_detect("new line in map!");
 			break ;
 		}
