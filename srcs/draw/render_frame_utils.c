@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 22:29:44 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/14 18:26:56 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/14 23:37:21 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,21 +83,21 @@ static void	dda(t_cal *cal, t_draw *draw)
 		{
 			cal->side_ratio_x += cal->delta_ratio_x;
 			cal->map_pos.x += cal->step.x;
-			if (draw->dir.x > 0)
+			if (cal->ray_dir.x > 0)
 				draw->side = east;
 			else
 				draw->side = west;
 		}
 		else
 		{
-			cal->side_ratio_x += cal->delta_ratio_x;
-			cal->map_pos.x += cal->step.x;
-			if (draw->dir.y > 0)
+			cal->side_ratio_y += cal->delta_ratio_y;
+			cal->map_pos.y += cal->step.y;
+			if (cal->ray_dir.y > 0)
 				draw->side = north;
 			else
 				draw->side = south;
 		}
-		if (draw->map[cal->map_pos.x][cal->map_pos.y] > 0)
+		if (draw->map[cal->map_pos.y][cal->map_pos.x] > '0')
 			cal->hit = 1;
 	}
 }
