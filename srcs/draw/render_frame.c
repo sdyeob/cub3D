@@ -6,17 +6,17 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/12 21:10:36 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/14 21:51:41 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <math.h>
-
+#include "../../minilibx_opengl_20191021/mlx.h"
 #include "../../includes/drawing_struct.h"
 #include "../../includes/drawing_consts.h"
 #include "../../includes/drawing.h"
 
-static void	cal_ratios(t_cal *cal, t_draw *draw);
+static void	color_background(t_draw *draw);
+static void	color_wall(t_draw *draw, int x);
 
 int	render_frame(t_draw *draw)
 {
@@ -24,50 +24,53 @@ int	render_frame(t_draw *draw)
 	int			x;
 	double		plane_coef;
 
+	color_background(draw);
 	cal.plane = get_plane_vec(draw->dir);
 	x = -1;
 	while (++x < WIN_WIDTH)
 	{
 		plane_coef = 2 * x / (double)WIN_WIDTH - 1;
 		cal.ray_dir = add_vec(draw->dir, mult_vec(plane_coef, cal.plane));
-		cal_ratios(&cal, draw);
+		calculate_vars(&cal, draw);
+		color_wall(draw, x);
+		mlx_put_image_to_window(draw->mlx_ptr, draw->win_ptr, \
+		draw->img.img_ptr, 0, 0);
+	}
+	return (0);
+}
+
+static void	color_wall(t_draw *draw, int x)
+{
+	double	step;
+	double	tex_y_pos;
+	int		y;
+
+	step = 1.0 * draw->ewsn[draw->side].height / draw->wall_height;
+	tex_y_pos = (draw->y_start - WIN_HEIGHT / 2 + draw->wall_height / 2) * step;
+	y = draw->y_start - 1;
+	while (++y < draw->y_end)
+	{
+		my_mlx_pixel_put(&(draw->img), x, y, \
+		get_tex_color(draw, draw->tex_x, (int)tex_y_pos));
+		tex_y_pos += step;
 	}
 }
 
-static void	cal_ratios(t_cal *cal, t_draw *draw)
+static void	color_background(t_draw *draw)
 {
-	if (cal->ray_dir.x == 0 || cal->ray_dir.y == 0)
-	{
-		cal->delta_ratio_x
-	}
-	cal->delta_ratio_x = fabs(1 / cal->ray_dir.x);
-	cal->delta_ratio_y = fabs(1 / cal->ray_dir.y);
-}
+	int	x;
+	int	y;
 
-static void	dda(t_cal *cal, t_draw *draw)
-{
-	cal->hit = 0;
-	while (cal->hit == 0)
+	x = -1;
+	while (++x < WIN_WIDTH)
 	{
-		if (cal->side_ratio_x < cal->side_ratio_y)
+		y = -1;
+		while (++y < WIN_HEIGHT)
 		{
-			cal->side_ratio_x += cal->delta_ratio_x;
-			cal->map_pos.x += cal->step.x;
-			if (draw->dir.x > 0)
-				cal->side = east;
+			if (y < WIN_HEIGHT / 2)
+				my_mlx_pixel_put(&(draw->img), x, y, draw->c_color);
 			else
-				cal->side = west;
+				my_mlx_pixel_put(&(draw->img), x, y, draw->f_color);
 		}
-		else
-		{
-			cal->side_ratio_x += cal->delta_ratio_x;
-			cal->map_pos.x += cal->step.x;
-			if (draw->dir.y > 0)
-				cal->side = north;
-			else
-				cal->side = south;
-		}
-		if (draw->map[cal->map_pos.x][cal->map_pos.y] > 0)
-			cal->hit = 1;
 	}
 }
