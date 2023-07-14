@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:40:24 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/12 20:47:48 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/13 22:00:14 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,13 @@ t_vec_d	mult_vec(double scalar, t_vec_d vec)
 	sm.x = scalar * vec.x;
 	sm.y = scalar * vec.y;
 	return (sm);
+}
+
+t_vec_i	init_vec_i(int x, int y)
+{
+	t_vec_i	vec_i;
+
+	vec_i.x = x;
+	vec_i.y = y;
+	return (vec_i);
 }
