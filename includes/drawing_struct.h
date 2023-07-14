@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:30:22 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/14 18:23:52 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/12 21:09:07 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ typedef struct s_vec_i
 
 typedef enum e_side
 {
-	east = 0,
-	west = 1,
-	south = 2,
-	north = 3
+	east,
+	west,
+	south,
+	north
 }	t_side;
 
 typedef struct s_img
@@ -40,8 +40,6 @@ typedef struct s_img
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-	int		width;
-	int		height;
 }	t_img;
 
 typedef struct s_draw
@@ -55,11 +53,6 @@ typedef struct s_draw
 	t_img		ewsn[4];
 	t_vec_d		pos;
 	t_vec_d		dir;
-	t_side		side;
-	int			wall_height;
-	int			y_start;
-	int			y_end;
-	int			tex_x;
 }	t_draw;
 
 typedef struct s_cal
@@ -68,13 +61,12 @@ typedef struct s_cal
 	t_vec_d		ray_dir;
 	t_vec_i		map_pos;
 	t_vec_i		step;
+	t_side		side;
 	int			hit;
 	double		side_ratio_x;
 	double		side_ratio_y;
 	double		delta_ratio_x;
 	double		delta_ratio_y;
-	double		wall_camera_plane_dist;
-	double		wall_x;
 }	t_cal;
 
 #endif
