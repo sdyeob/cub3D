@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:35:43 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/13 19:05:37 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/14 21:35:03 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "inspect.h"
 #include "parsing.h"
 #include "struct.h"
+#include "drawing.h"
 
 void	init_map_inf(t_map_inf *map_inf)
 {
