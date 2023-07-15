@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:30:22 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/14 18:23:52 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:37:52 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,16 @@ typedef enum e_side
 	south = 2,
 	north = 3
 }	t_side;
+
+typedef struct s_move
+{
+	int	left;
+	int	right;
+	int	front;
+	int	back;
+	int	ro_left;
+	int	ro_right;
+}	t_move;
 
 typedef struct s_img
 {
@@ -60,6 +70,7 @@ typedef struct s_draw
 	int			y_start;
 	int			y_end;
 	int			tex_x;
+	t_move		move;
 }	t_draw;
 
 typedef struct s_cal
