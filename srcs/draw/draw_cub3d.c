@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/14 21:53:20 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:54:08 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "../../includes/drawing.h"
 
 static void	init_textures(t_draw *draw, t_map_inf *map_info);
-static void	init_cf_color(t_draw *draw, t_map_inf *map_info);
+static void	init_color_move(t_draw *draw, t_map_inf *map_info);
 static void	init_draw(t_draw *draw, t_map_inf *map_info);
 
 void	draw_cub3d(t_map_inf *map_info)
@@ -26,6 +26,8 @@ void	draw_cub3d(t_map_inf *map_info)
 
 	init_draw(&draw, map_info);
 	mlx_hook(draw.win_ptr, 2, 0, key_down, &draw);
+	mlx_hook(draw.win_ptr, 3, 0, key_up, &draw);
+	mlx_hook(draw.win_ptr, 17, 0, destroy, &draw);
 	mlx_loop_hook(draw.mlx_ptr, render_frame, &draw);
 	mlx_loop(draw.mlx_ptr);
 }
@@ -52,7 +54,7 @@ static void	init_draw(t_draw *draw, t_map_inf *map_info)
 	else
 		draw->dir.y = 1;
 	init_textures(draw, map_info);
-	init_cf_color(draw, map_info);
+	init_color_move(draw, map_info);
 }
 
 static void	init_textures(t_draw *draw, t_map_inf *map_info)
@@ -81,7 +83,7 @@ static void	init_textures(t_draw *draw, t_map_inf *map_info)
 	&(img->bits_per_pixel), &(img->line_length), &(img->endian));
 }
 
-static void	init_cf_color(t_draw *draw, t_map_inf *map_info)
+static void	init_color_move(t_draw *draw, t_map_inf *map_info)
 {
 	int	*cf;
 
@@ -89,4 +91,10 @@ static void	init_cf_color(t_draw *draw, t_map_inf *map_info)
 	draw->c_color = create_trgb(0, cf[0], cf[1], cf[2]);
 	cf = map_info->identifier.f;
 	draw->f_color = create_trgb(0, cf[0], cf[1], cf[2]);
+	draw->move.ro_left = 0;
+	draw->move.ro_right = 0;
+	draw->move.left = 0;
+	draw->move.right = 0;
+	draw->move.front = 0;
+	draw->move.back = 0;
 }

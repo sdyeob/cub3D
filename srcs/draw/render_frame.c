@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/14 21:51:41 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/15 22:45:49 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 static void	color_background(t_draw *draw);
 static void	color_wall(t_draw *draw, int x);
+static void	move_fov(t_draw *draw);
 
 int	render_frame(t_draw *draw)
 {
@@ -25,6 +26,7 @@ int	render_frame(t_draw *draw)
 	double		plane_coef;
 
 	color_background(draw);
+	move_fov(draw);
 	cal.plane = get_plane_vec(draw->dir);
 	x = -1;
 	while (++x < WIN_WIDTH)
@@ -37,6 +39,16 @@ int	render_frame(t_draw *draw)
 		draw->img.img_ptr, 0, 0);
 	}
 	return (0);
+}
+
+static void	move_fov(t_draw *draw)
+{
+	draw->pos = add_vec(draw->pos, \
+	mult_vec((draw->move.front - draw->move.back) * VELOCITY, draw->dir));
+	draw->pos = add_vec(draw->pos, mult_vec((draw->move.right - \
+	draw->move.left) * VELOCITY, get_plane_vec(draw->dir)));
+	draw->dir = rotate_vec(draw->dir, \
+	(draw->move.ro_right - draw->move.ro_left) * ANGLE_VELOCITY);
 }
 
 static void	color_wall(t_draw *draw, int x)

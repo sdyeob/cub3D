@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/14 21:54:10 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/15 15:40:33 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ int		render_frame(t_draw *draw);
 void	calculate_vars(t_cal *cal, t_draw *draw);
 
 //hook.c
-int		key_down(int keycode, t_draw *all);
+int		key_down(int keycode, t_draw *draw);
+int		key_up(int keycode, t_draw *draw);
+int		destroy(t_draw *draw);
 
 //vector.c
 t_vec_d	get_plane_vec(t_vec_d dir);

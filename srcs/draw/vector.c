@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:40:24 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/13 22:00:14 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/15 22:48:33 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ t_vec_d	rotate_vec(t_vec_d dir, double angle)
 {
 	t_vec_d	ro;
 
-	ro.x = cos(angle) * dir.x - sin(angle) * dir.y;
-	ro.y = sin(angle) * dir.x + cos(angle) * dir.x;
+	ro.x = cos(angle) * dir.x + sin(angle) * dir.y;
+	ro.y = - sin(angle) * dir.x + cos(angle) * dir.y;
 	return (ro);
 }
 
