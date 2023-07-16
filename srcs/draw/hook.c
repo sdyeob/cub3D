@@ -6,9 +6,11 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:41:42 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/15 22:34:07 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/16 20:42:02 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 #include "../../minilibx_opengl_20191021/mlx.h"
 #include "../../includes/drawing_struct.h"
@@ -24,11 +26,12 @@
 int	destroy(t_draw *draw)
 {
 	mlx_destroy_window(draw->mlx_ptr, draw->win_ptr);
-	// mlx_destroy_image(draw->mlx_ptr, draw->img.img_ptr);
-	// mlx_destroy_image(draw->mlx_ptr, draw->ewsn[east].img_ptr);
-	// mlx_destroy_image(draw->mlx_ptr, draw->ewsn[west].img_ptr);
-	// mlx_destroy_image(draw->mlx_ptr, draw->ewsn[south].img_ptr);
-	// mlx_destroy_image(draw->mlx_ptr, draw->ewsn[north].img_ptr);
+	mlx_destroy_image(draw->mlx_ptr, draw->img.img_ptr);
+	mlx_destroy_image(draw->mlx_ptr, draw->ewsn[east].img_ptr);
+	mlx_destroy_image(draw->mlx_ptr, draw->ewsn[west].img_ptr);
+	mlx_destroy_image(draw->mlx_ptr, draw->ewsn[south].img_ptr);
+	mlx_destroy_image(draw->mlx_ptr, draw->ewsn[north].img_ptr);
+	exit(0);
 	return (0);
 }
 
