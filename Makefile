@@ -16,7 +16,7 @@ SRCS := $(addprefix srcs/, main.c err_detect.c utils.c ) \
 			parsing_color.c parsing_map.c parsing_map2.c \
 			map_list.c map_validity.c ) \
 		$(addprefix srcs/draw/, color.c draw_cub3d.c hook.c \
-		render_frame.c render_frame_utils.c vector.c )
+		render_frame.c render_frame_utils.c vector.c render_minimap.c )
 
 OBJS := $(SRCS:.c=.o)
 

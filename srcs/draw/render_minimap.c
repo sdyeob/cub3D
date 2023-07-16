@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   drawing_consts.h                                   :+:      :+:    :+:   */
+/*   render_minimap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 20:17:54 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/16 20:54:30 by dongyshi         ###   ########.fr       */
+/*   Created: 2023/07/16 20:59:02 by dongyshi          #+#    #+#             */
+/*   Updated: 2023/07/16 21:02:18 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DRAWING_CONSTS_H
-# define DRAWING_CONSTS_H
+#include "drawing.h"
+#include "drawing_struct.h"
 
-# define WIN_WIDTH 1024
-# define WIN_HEIGHT 800
-
-# define VELOCITY 0.2
-# define ANGLE_VELOCITY 0.1
-
-# define PLANE_SIZE 0.67
-
-#endif
+void	render_minimap(t_img *img)
+{
+	for (int i = 0; i < 200; i++) {
+		for (int j = 0; j < 200; j++)
+			my_mlx_pixel_put(img, 20 + j, 20 + i, 255);
+	}
+}

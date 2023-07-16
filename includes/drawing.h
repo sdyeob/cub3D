@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/15 15:40:33 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/16 21:00:57 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		create_trgb(int t, int r, int g, int b);
 
 //render_frame.c
 int		render_frame(t_draw *draw);
+void	render_minimap(t_img *img);
 
 //render_frame_utils.c
 void	calculate_vars(t_cal *cal, t_draw *draw);
