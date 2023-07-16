@@ -1,11 +1,16 @@
-NO 1.xpm
-SO 1.xpm
-WE 1.xpm
-EA 1.xpm
+NO test_files/north.xpm
+SO test_files/north.xpm
+WE test_files/north.xpm
+EA test_files/north.xpm
 
 F 11,11,1
-C 11,11,1
+C 11,110,1
 
-1111  1
-1W01 101
-1111 11
+11111111111
+10000000001
+10000000001
+1000W000001
+10000000001
+10000000001
+10000000001
+11111111111

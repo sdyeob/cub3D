@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_frame.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/16 20:43:56 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/16 21:01:37 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	render_frame(t_draw *draw)
 		calculate_vars(&cal, draw);
 		color_wall(draw, x);
 	}
+	render_minimap(&draw->img);
 	mlx_put_image_to_window(draw->mlx_ptr, draw->win_ptr, \
 	draw->img.img_ptr, 0, 0);
 	return (0);
