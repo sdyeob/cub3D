@@ -1,5 +1,5 @@
 NAME := cub3D
-CC := gcc
+CC := cc
 CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 RM = rm -rf
 
@@ -44,7 +44,7 @@ clean :
 fclean :
 	make clean
 	make -C $(LIB_DIR) fclean
-	make -C $(DYLD_LIBRARY_PATH) fclean
+	make -C $(DYLD_LIBRARY_PATH) clean
 	$(RM) $(LIB)
 	$(RM) $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/15 22:45:49 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/16 20:43:56 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "../../includes/drawing_consts.h"
 #include "../../includes/drawing.h"
 
-static void	color_background(t_draw *draw);
 static void	color_wall(t_draw *draw, int x);
 static void	move_fov(t_draw *draw);
 
@@ -25,7 +24,6 @@ int	render_frame(t_draw *draw)
 	int			x;
 	double		plane_coef;
 
-	color_background(draw);
 	move_fov(draw);
 	cal.plane = get_plane_vec(draw->dir);
 	x = -1;
@@ -35,9 +33,9 @@ int	render_frame(t_draw *draw)
 		cal.ray_dir = add_vec(draw->dir, mult_vec(plane_coef, cal.plane));
 		calculate_vars(&cal, draw);
 		color_wall(draw, x);
-		mlx_put_image_to_window(draw->mlx_ptr, draw->win_ptr, \
-		draw->img.img_ptr, 0, 0);
 	}
+	mlx_put_image_to_window(draw->mlx_ptr, draw->win_ptr, \
+	draw->img.img_ptr, 0, 0);
 	return (0);
 }
 
@@ -59,30 +57,18 @@ static void	color_wall(t_draw *draw, int x)
 
 	step = 1.0 * draw->ewsn[draw->side].height / draw->wall_height;
 	tex_y_pos = (draw->y_start - WIN_HEIGHT / 2 + draw->wall_height / 2) * step;
-	y = draw->y_start - 1;
-	while (++y < draw->y_end)
+	y = -1;
+	while (++y < WIN_HEIGHT)
 	{
-		my_mlx_pixel_put(&(draw->img), x, y, \
-		get_tex_color(draw, draw->tex_x, (int)tex_y_pos));
-		tex_y_pos += step;
-	}
-}
-
-static void	color_background(t_draw *draw)
-{
-	int	x;
-	int	y;
-
-	x = -1;
-	while (++x < WIN_WIDTH)
-	{
-		y = -1;
-		while (++y < WIN_HEIGHT)
+		if (y < draw->y_start)
+			my_mlx_pixel_put(&(draw->img), x, y, draw->c_color);
+		else if (y >= draw->y_end)
+			my_mlx_pixel_put(&(draw->img), x, y, draw->f_color);
+		else
 		{
-			if (y < WIN_HEIGHT / 2)
-				my_mlx_pixel_put(&(draw->img), x, y, draw->c_color);
-			else
-				my_mlx_pixel_put(&(draw->img), x, y, draw->f_color);
+			my_mlx_pixel_put(&(draw->img), x, y, \
+			get_tex_color(draw, draw->tex_x, (int)tex_y_pos));
+			tex_y_pos += step;
 		}
 	}
 }

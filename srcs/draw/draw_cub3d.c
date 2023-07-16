@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/15 15:54:08 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/16 20:42:02 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static void	init_draw(t_draw *draw, t_map_inf *map_info)
 	draw->img.img_ptr = mlx_new_image(draw->mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
 	draw->img.addr = mlx_get_data_addr(draw->img.img_ptr, \
 	&(draw->img.bits_per_pixel), &(draw->img.line_length), &(draw->img.endian));
+	draw->map[map_info->player_loc_y][map_info->player_loc_x] = '0';
 	draw->pos.x = map_info->player_loc_x + 0.5;
 	draw->pos.y = map_info->player_loc_y + 0.5;
 	draw->dir.x = 0;
