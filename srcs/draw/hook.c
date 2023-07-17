@@ -6,22 +6,16 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:41:42 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/16 20:42:02 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/17 19:39:38 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 #include "../../minilibx_opengl_20191021/mlx.h"
+#include "../../includes/drawing.h"
 #include "../../includes/drawing_struct.h"
-
-#define KEY_ESC 53
-#define KEY_LEFT 123
-#define KEY_RIGHT 124
-#define KEY_W 13
-#define KEY_A 0
-#define KEY_S 1
-#define KEY_D 2
+#include "../../includes/drawing_consts.h"
 
 int	destroy(t_draw *draw)
 {
@@ -71,19 +65,11 @@ int	key_up(int keycode, t_draw *draw)
 	return (0);
 }
 
-// int	mouse_hook(int mousecode, int x, int y, t_draw *all)
-// {
-// 	if (mousecode == MOUSE_SCROLL_UP)
-// 	{
-// 		update_mid(x, y, all);
-// 		if (all->pos.accum * 1.1 < 10000000000)
-// 			all->pos.accum *= 1.1;
-// 	}
-// 	else if (mousecode == MOUSE_SCROLL_DOWN)
-// 	{
-// 		update_mid(x, y, all);
-// 		if (all->pos.accum / 1.1 > 1)
-// 			all->pos.accum /= 1.1;
-// 	}
-// 	return (0);
-// }
+int	mouse_hook(int x, int y, t_draw *draw)
+{
+	draw->dir = rotate_vec(draw->dir, \
+	(x - draw->mouse_pos.x) * MOUSE_ANGLE_RATIO);
+	draw->mouse_pos.x = x;
+	draw->mouse_pos.y = y;
+	return (0);
+}

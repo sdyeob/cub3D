@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_cub3d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/17 15:58:54 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/17 19:36:56 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	draw_cub3d(t_map_inf *map_info)
 	init_draw(&draw, map_info);
 	mlx_hook(draw.win_ptr, 2, 0, key_down, &draw);
 	mlx_hook(draw.win_ptr, 3, 0, key_up, &draw);
+	mlx_hook(draw.win_ptr, 6, 0, mouse_hook, &draw);
 	mlx_hook(draw.win_ptr, 17, 0, destroy, &draw);
 	mlx_loop_hook(draw.mlx_ptr, render_frame, &draw);
 	mlx_loop(draw.mlx_ptr);
@@ -100,4 +101,7 @@ static void	init_color_move(t_draw *draw, t_map_inf *map_info)
 	draw->move.right = 0;
 	draw->move.front = 0;
 	draw->move.back = 0;
+	mlx_mouse_get_pos(draw->win_ptr, \
+	&draw->mouse_pos.x, &draw->mouse_pos.y);
+	mlx_mouse_hide();
 }

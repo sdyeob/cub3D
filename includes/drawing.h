@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/17 15:55:23 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/17 19:39:06 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	calculate_vars(t_cal *cal, t_draw *draw);
 int		key_down(int keycode, t_draw *draw);
 int		key_up(int keycode, t_draw *draw);
 int		destroy(t_draw *draw);
+int		mouse_hook(int x, int y, t_draw *draw);
 
 //vector.c
 t_vec_d	get_plane_vec(t_vec_d dir);
