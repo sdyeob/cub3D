@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:17:54 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/17 19:40:14 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/17 20:27:13 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 //Value, you can change
 # define WIN_WIDTH 1024
 # define WIN_HEIGHT 800
+
+# define M_WIDTH 200
+# define M_HEIGHT 200
+# define M_BLOCK_PER_PIXEL 0.05
+# define M_PLAYER_RANGE 10
+# define M_SEP 20
 
 # define PLANE_SIZE 0.67
 # define VELOCITY 0.2
