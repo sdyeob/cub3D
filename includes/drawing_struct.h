@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_struct.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:30:22 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/17 15:58:02 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/17 18:32:36 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ typedef struct s_draw
 	t_img		ewsn[4];
 	t_vec_d		pos;
 	t_vec_d		dir;
+	t_vec_i		mouse_pos;
 	t_side		side;
 	int			wall_height;
 	int			y_start;
