@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_cub3d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/16 20:42:02 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/17 15:58:54 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	draw_cub3d(t_map_inf *map_info)
 static void	init_draw(t_draw *draw, t_map_inf *map_info)
 {
 	draw->map = map_info->map;
+	draw->m_height = map_info->m_height;
+	draw->m_width = map_info->m_width;
 	draw->mlx_ptr = mlx_init();
 	draw->win_ptr = mlx_new_window(draw->mlx_ptr, \
 	WIN_WIDTH, WIN_HEIGHT, "cub3D");

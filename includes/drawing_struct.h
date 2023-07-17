@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_struct.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:30:22 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/15 15:37:52 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/17 15:58:02 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ typedef struct s_img
 typedef struct s_draw
 {
 	char		**map;
+	int			m_height;
+	int			m_width;
 	int			f_color;
 	int			c_color;
 	void		*mlx_ptr;

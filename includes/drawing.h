@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/16 21:00:57 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/17 15:55:23 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		create_trgb(int t, int r, int g, int b);
 
 //render_frame.c
 int		render_frame(t_draw *draw);
-void	render_minimap(t_img *img);
+void	render_minimap(t_draw *draw);
 
 //render_frame_utils.c
 void	calculate_vars(t_cal *cal, t_draw *draw);
