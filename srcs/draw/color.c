@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 19:03:35 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/14 19:11:44 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/17 20:23:50 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	get_tex_color(t_draw *draw, int x, int y)
 	return (*(int *)dst);
 }
 
-void	my_mlx_pixel_put(t_img *data, int x, int y, int color)
+void	my_pixel_put(t_img *data, int x, int y, int color)
 {
 	char	*dst;
 

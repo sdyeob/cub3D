@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_frame.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/17 15:55:39 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/17 20:23:50 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ static void	color_wall(t_draw *draw, int x)
 	while (++y < WIN_HEIGHT)
 	{
 		if (y < draw->y_start)
-			my_mlx_pixel_put(&(draw->img), x, y, draw->c_color);
+			my_pixel_put(&(draw->img), x, y, draw->c_color);
 		else if (y >= draw->y_end)
-			my_mlx_pixel_put(&(draw->img), x, y, draw->f_color);
+			my_pixel_put(&(draw->img), x, y, draw->f_color);
 		else
 		{
-			my_mlx_pixel_put(&(draw->img), x, y, \
+			my_pixel_put(&(draw->img), x, y, \
 			get_tex_color(draw, draw->tex_x, (int)tex_y_pos));
 			tex_y_pos += step;
 		}

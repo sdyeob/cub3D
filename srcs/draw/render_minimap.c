@@ -3,48 +3,52 @@
 /*                                                        :::      ::::::::   */
 /*   render_minimap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 20:59:02 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/17 17:59:45 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/17 20:34:00 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <math.h>
+
 #include "drawing.h"
 #include "drawing_struct.h"
+#include "drawing_consts.h"
 
 static int	is_in_map(t_draw *draw, int i, int j);
+static int	is_player_in_map(int w, int h);
 
 void	render_minimap(t_draw *draw)
 {
-	int	i;
-	int j;
-	int	player_row;
-	int	player_col;
+	int	h;
+	int w;
+	int	row;
+	int	col;
 
-	i = -1;
-	while (++i < 200)
+	h = -1;
+	while (++h < M_HEIGHT)
 	{
-		j = -1;
-		while (++j < 200)
+		w = -1;
+		while (++w < M_WIDTH)
 		{
-			player_col = (int)draw->pos.x + (j - 100) / 20;
-			player_row = (int)draw->pos.y + (i - 100) / 20;
-			if (is_in_map(draw, player_row, player_col))
+			row = floor(draw->pos.y + (h - M_HEIGHT / 2) * M_BLOCK_PER_PIXEL);
+			col = floor(draw->pos.x + (w - M_WIDTH / 2) * M_BLOCK_PER_PIXEL);
+			if (is_in_map(draw, row, col))
 			{
-				if ((95 <= i && i < 105) && (95 <= j && j < 105))
-					my_mlx_pixel_put(&draw->img, 20 + j, 20 + i, 0xFFFFFF);
-				else if (draw->map[player_row][player_col] == '1')
-					my_mlx_pixel_put(&draw->img, 20 + j, 20 + i, 0x000099);
-				else if (draw->map[player_row][player_col] == '0')
-					my_mlx_pixel_put(&draw->img, 20 + j, 20 + i, 0x0033FF);
-				else if (draw->map[player_row][player_col] == ' ')
-					my_mlx_pixel_put(&draw->img, 20 + j, 20 + i, 0x6699FF);
+				if (is_player_in_map(w, h))
+					my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 0xFFFFFF);
+				else if (draw->map[row][col] == '1')
+					my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 0x000099);
+				else if (draw->map[row][col] == '0')
+					my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 0x0033FF);
+				else if (draw->map[row][col] == ' ')
+					my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 0x6699FF);
 				// else
-				// 	my_mlx_pixel_put(&draw->img, 20 + j, 20 + i, 150 << 24 | 220);
+				// 	my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 150 << 24 | 220);
 			}
 			else
-				my_mlx_pixel_put(&draw->img, 20 + j, 20 + i, 100 << 24 | 220);
+				my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 100 << 24 | 220);
 		}
 	}
 }
@@ -56,4 +60,18 @@ static int	is_in_map(t_draw *draw, int player_row, int player_col)
 		return (1);
 	else
 		return (0);
+}
+
+static int	is_player_in_map(int w, int h)
+{
+	if ((M_WIDTH - M_PLAYER_RANGE) / 2 > w)
+		return (0);
+	else if ((M_WIDTH + M_PLAYER_RANGE) / 2 <= w)
+		return (0);
+	else if ((M_HEIGHT - M_PLAYER_RANGE) / 2 > h)
+		return (0);
+	else if ((M_HEIGHT + M_PLAYER_RANGE) / 2 <= h)
+		return (0);
+	else
+		return (1);
 }
