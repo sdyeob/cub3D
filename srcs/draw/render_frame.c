@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/17 20:23:50 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 14:28:11 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "../../includes/drawing.h"
 
 static void	color_wall(t_draw *draw, int x);
-static void	move_fov(t_draw *draw);
 
 int	render_frame(t_draw *draw)
 {
@@ -38,16 +37,6 @@ int	render_frame(t_draw *draw)
 	mlx_put_image_to_window(draw->mlx_ptr, draw->win_ptr, \
 	draw->img.img_ptr, 0, 0);
 	return (0);
-}
-
-static void	move_fov(t_draw *draw)
-{
-	draw->pos = add_vec(draw->pos, \
-	mult_vec((draw->move.front - draw->move.back) * VELOCITY, draw->dir));
-	draw->pos = add_vec(draw->pos, mult_vec((draw->move.right - \
-	draw->move.left) * VELOCITY, get_plane_vec(draw->dir)));
-	draw->dir = rotate_vec(draw->dir, \
-	(draw->move.ro_right - draw->move.ro_left) * ANGLE_VELOCITY);
 }
 
 static void	color_wall(t_draw *draw, int x)

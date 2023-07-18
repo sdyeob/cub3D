@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:41:42 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/17 19:39:38 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 15:04:54 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ int	mouse_hook(int x, int y, t_draw *draw)
 {
 	draw->dir = rotate_vec(draw->dir, \
 	(x - draw->mouse_pos.x) * MOUSE_ANGLE_RATIO);
-	draw->mouse_pos.x = x;
+	mlx_mouse_move(draw->win_ptr, WIN_WIDTH / 2, WIN_HEIGHT / 2);
+	draw->mouse_pos.x = WIN_WIDTH / 2;
 	draw->mouse_pos.y = y;
 	return (0);
 }

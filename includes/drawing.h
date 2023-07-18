@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/17 20:23:50 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 14:28:06 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ void	draw_cub3d(t_map_inf *map_info);
 int		get_tex_color(t_draw *draw, int x, int y);
 void	my_pixel_put(t_img *data, int x, int y, int color);
 int		create_trgb(int t, int r, int g, int b);
+
+//move.c
+void	move_fov(t_draw *draw);
 
 //render_frame.c
 int		render_frame(t_draw *draw);
