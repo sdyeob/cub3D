@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:17:54 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/17 20:27:13 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 14:52:17 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 # define M_SEP 20
 
 # define PLANE_SIZE 0.67
-# define VELOCITY 0.2
+# define VELOCITY 0.1
 # define ANGLE_VELOCITY 0.1
-# define MOUSE_ANGLE_RATIO 0.005
+# define MOUSE_ANGLE_RATIO 0.002
 
 //fixed value
 # define KEY_ESC 53
