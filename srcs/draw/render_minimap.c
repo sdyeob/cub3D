@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 20:59:02 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/18 20:49:00 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 21:28:56 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static inline int	get_render_object(t_draw *draw, t_minimap m)
 		else if (draw->map[m.row][m.col] == ' ')
 			return (SPACE_COLOR);
 		else
-			return (0);
+			return (DOOR_COLOR);
 	}
 	else
 		return (OUT_OF_MAP_COLOR);
