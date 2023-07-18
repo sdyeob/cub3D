@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_minimap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 20:59:02 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/17 20:34:00 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:28:42 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,44 +16,30 @@
 #include "drawing_struct.h"
 #include "drawing_consts.h"
 
-static int	is_in_map(t_draw *draw, int i, int j);
-static int	is_player_in_map(int w, int h);
+static inline int	is_in_map(t_draw *draw, int player_row, int player_col);
+static inline int	is_player(int w, int h);
+static inline int	get_render_object(t_draw *draw, t_minimap m);
 
 void	render_minimap(t_draw *draw)
 {
-	int	h;
-	int w;
-	int	row;
-	int	col;
+	int			object_color;
+	t_minimap	m;
 
-	h = -1;
-	while (++h < M_HEIGHT)
+	m.h = -1;
+	while (++(m.h) < M_HEIGHT)
 	{
-		w = -1;
-		while (++w < M_WIDTH)
+		m.w = -1;
+		while (++(m.w) < M_WIDTH)
 		{
-			row = floor(draw->pos.y + (h - M_HEIGHT / 2) * M_BLOCK_PER_PIXEL);
-			col = floor(draw->pos.x + (w - M_WIDTH / 2) * M_BLOCK_PER_PIXEL);
-			if (is_in_map(draw, row, col))
-			{
-				if (is_player_in_map(w, h))
-					my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 0xFFFFFF);
-				else if (draw->map[row][col] == '1')
-					my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 0x000099);
-				else if (draw->map[row][col] == '0')
-					my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 0x0033FF);
-				else if (draw->map[row][col] == ' ')
-					my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 0x6699FF);
-				// else
-				// 	my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 150 << 24 | 220);
-			}
-			else
-				my_pixel_put(&draw->img, M_SEP + w, M_SEP + h, 100 << 24 | 220);
+			m.row = floor(draw->pos.y + (m.h - M_HEIGHT / 2) * M_BPP);
+			m.col = floor(draw->pos.x + (m.w - M_WIDTH / 2) * M_BPP);
+			object_color = get_render_object(draw, minimap);
+			my_pixel_put(&draw->img, M_SEP + m.w, M_SEP + m.h, object_color);
 		}
 	}
 }
 
-static int	is_in_map(t_draw *draw, int player_row, int player_col)
+static inline int	is_in_map(t_draw *draw, int player_row, int player_col)
 {
 	if ((0 <= player_col && player_col < draw->m_width) \
 		&& (0 <= player_row && player_row < draw->m_height))
@@ -62,7 +48,26 @@ static int	is_in_map(t_draw *draw, int player_row, int player_col)
 		return (0);
 }
 
-static int	is_player_in_map(int w, int h)
+static inline int	get_render_object(t_draw *draw, t_minimap m)
+{
+	if (is_in_map(draw, m.row, m.col))
+	{
+		if (is_player(m.w, m.h))
+			return (PLAYER_COLOR);
+		else if (draw->map[m.row][m.col] == '1')
+			return (WALL_COLOR);
+		else if (draw->map[m.row][m.col] == '0')
+			return (FLOOR_COLOR);
+		else if (draw->map[m.row][m.col] == ' ')
+			return (SPACE_COLOR);
+		else
+			return (0);
+	}
+	else
+		return (OUT_OF_MAP_COLOR);
+}
+
+static inline int	is_player(int w, int h)
 {
 	if ((M_WIDTH - M_PLAYER_RANGE) / 2 > w)
 		return (0);
