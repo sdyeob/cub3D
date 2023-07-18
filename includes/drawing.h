@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 20:48:50 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 21:44:41 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ int		get_tex_color(t_draw *draw, int x, int y);
 void	my_pixel_put(t_img *data, int x, int y, int color);
 int		create_trgb(int t, int r, int g, int b);
 
+//door.c
+void	door(t_draw *draw);
+void	door_change(t_draw *draw);
+int		door_or_wall(t_cal *cal, t_draw *draw);
+
 //move.c
 void	move_fov(t_draw *draw);
 
@@ -33,6 +38,8 @@ void	render_minimap(t_draw *draw);
 
 //render_frame_utils.c
 void	calculate_vars(t_cal *cal, t_draw *draw);
+void	cal_perp_dist_y_range(t_cal *cal, t_draw *draw);
+void	cal_tex_x(t_cal *cal, t_draw *draw);
 
 //hook.c
 int		key_down(int keycode, t_draw *draw);
