@@ -6,14 +6,14 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:36:30 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/13 17:20:55 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:48:30 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSING_H
 # define PARSING_H
 
-# include "struct.h"
+# include "map_struct.h"
 
 void	first_reading(t_map_inf *map_inf, int file_fd, \
 	t_map_list **head, t_map_list **tail);

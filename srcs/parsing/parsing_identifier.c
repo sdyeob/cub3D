@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:10:13 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/12 17:56:20 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:47:18 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 #include "inspect.h"
 #include "libft.h"
 #include "gnl.h"
-#include "struct.h"
+#include "map_struct.h"
 #include "utils.h"
 #include "parsing.h"
+#include "map_consts.h"
 
 static int	is_identifier(char *line);
 static int	fill_identifier(t_identifier *identifier, \
@@ -62,7 +63,7 @@ static int	is_identifier(char *line)
 		if (ft_strncmp(line, identifier[i], ft_strlen(identifier[i]) + 1) == 0)
 			return (i + 1);
 	}
-	return (0);
+	return (NOT_IDENTIFIER);
 }
 
 static void	inspect_xpm_extension(char *splited_line)
@@ -81,19 +82,19 @@ static int	fill_identifier(t_identifier *identifier, \
 	char *splited_line, int status)
 {
 	remove_nl(splited_line);
-	if (1 <= status && status <= 4)
+	if (NORTH <= status && status <= SOUTH)
 		inspect_xpm_extension(splited_line);
-	if (status == 1 && !identifier->n)
+	if (status == NORTH && !identifier->n)
 		identifier->n = ft_substr(splited_line, 0, ft_strlen(splited_line));
-	else if (status == 2 && !identifier->w)
+	else if (status == WEST && !identifier->w)
 		identifier->w = ft_substr(splited_line, 0, ft_strlen(splited_line));
-	else if (status == 3 && !identifier->e)
+	else if (status == EAST && !identifier->e)
 		identifier->e = ft_substr(splited_line, 0, ft_strlen(splited_line));
-	else if (status == 4 && !identifier->s)
+	else if (status == SOUTH && !identifier->s)
 		identifier->s = ft_substr(splited_line, 0, ft_strlen(splited_line));
-	else if (status == 5 && identifier->f[0] == -1)
+	else if (status == FLOOR && identifier->f[0] == -1)
 		get_color(identifier, splited_line, status);
-	else if (status == 6 && identifier->c[0] == -1)
+	else if (status == CEIL && identifier->c[0] == -1)
 		get_color(identifier, splited_line, status);
 	else
 		return (0);
@@ -119,7 +120,7 @@ static char	**get_splited_line(int file_fd, int *status)
 			if (inspect_splited_line(splited_line) != 2)
 				err_detect("Error : Identifier");
 			*status = is_identifier(splited_line[0]);
-			if (*status == 0)
+			if (*status == NOT_IDENTIFIER)
 				err_detect("Error : Identifier Or Information");
 			free(line);
 			return (splited_line);

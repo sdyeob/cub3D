@@ -6,11 +6,11 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:18:22 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/13 18:23:23 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:39:57 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "struct.h"
+#include "map_struct.h"
 #include "err_detect.h"
 
 static void	is_close(t_map_inf *map_inf, int i, int j);

@@ -6,13 +6,13 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:51:00 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/13 15:30:04 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:48:05 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 #include "err_detect.h"
-#include "struct.h"
+#include "map_struct.h"
 #include "libft.h"
 #include <stdlib.h>
 
@@ -51,4 +51,3 @@ static char	*map_copy_from_list(t_map_list *head, int width)
 	}
 	return (map_element);
 }
-

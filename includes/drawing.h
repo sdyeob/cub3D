@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 14:28:06 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:48:50 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define DRAWING_H
 
 # include "drawing_struct.h"
-# include "struct.h"
+# include "map_struct.h"
 
 //draw_cub3d.c
 void	draw_cub3d(t_map_inf *map_info);

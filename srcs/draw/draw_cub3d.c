@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   draw_cub3d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/17 19:36:56 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:48:41 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../minilibx_opengl_20191021/mlx.h"
-#include "../../includes/struct.h"
+#include "../../includes/map_struct.h"
 #include "../../includes/drawing_consts.h"
 #include "../../includes/drawing_struct.h"
 #include "../../includes/drawing.h"
