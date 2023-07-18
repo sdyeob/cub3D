@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 14:28:11 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 17:30:11 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	render_frame(t_draw *draw)
 	render_minimap(draw);
 	mlx_put_image_to_window(draw->mlx_ptr, draw->win_ptr, \
 	draw->img.img_ptr, 0, 0);
+	if (draw->door.is_moving)
+		door_change(draw);
 	return (0);
 }
 

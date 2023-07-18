@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 22:29:44 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/14 23:37:21 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 21:16:04 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 static void	cal_step_side_ratio(t_cal *cal, t_draw *draw);
 static void	dda(t_cal *cal, t_draw *draw);
-static void	cal_perp_dist_y_range(t_cal *cal, t_draw *draw);
-static void	cal_tex_x(t_cal *cal, t_draw *draw);
 
 void	calculate_vars(t_cal *cal, t_draw *draw)
 {
@@ -76,8 +74,8 @@ static void	cal_step_side_ratio(t_cal *cal, t_draw *draw)
 
 static void	dda(t_cal *cal, t_draw *draw)
 {
-	cal->hit = 0;
-	while (cal->hit == 0)
+	cal->hit = 1;
+	while (cal->hit)
 	{
 		if (cal->side_ratio_x < cal->side_ratio_y)
 		{
@@ -98,11 +96,11 @@ static void	dda(t_cal *cal, t_draw *draw)
 				draw->side = south;
 		}
 		if (draw->map[cal->map_pos.y][cal->map_pos.x] > '0')
-			cal->hit = 1;
+			cal->hit = door_or_wall(cal, draw);
 	}
 }
 
-static void	cal_perp_dist_y_range(t_cal *cal, t_draw *draw)
+void	cal_perp_dist_y_range(t_cal *cal, t_draw *draw)
 {
 	if (draw->side == east || draw->side == west)
 		cal->wall_camera_plane_dist = \
@@ -110,7 +108,8 @@ static void	cal_perp_dist_y_range(t_cal *cal, t_draw *draw)
 	else
 		cal->wall_camera_plane_dist = \
 		(cal->map_pos.y - draw->pos.y + (1 - cal->step.y) / 2) / cal->ray_dir.y;
-	draw->wall_height = (int)(WIN_HEIGHT / cal->wall_camera_plane_dist);
+	draw->wall_height = (int)(WIN_HEIGHT * BLOCK_PER_WIN\
+							/ cal->wall_camera_plane_dist);
     draw->y_start = -draw->wall_height / 2 + WIN_HEIGHT / 2;
 	draw->y_end = draw->wall_height / 2 + WIN_HEIGHT / 2;
 	if(draw->y_start < 0)
@@ -119,7 +118,7 @@ static void	cal_perp_dist_y_range(t_cal *cal, t_draw *draw)
 		draw->y_end = WIN_HEIGHT - 1;//해야 하나?
 }
 
-static void	cal_tex_x(t_cal *cal, t_draw *draw)
+void	cal_tex_x(t_cal *cal, t_draw *draw)
 {
 	if (draw->side == east || draw->side == west)
 		cal->wall_x = \
@@ -128,7 +127,16 @@ static void	cal_tex_x(t_cal *cal, t_draw *draw)
 		cal->wall_x = \
 		draw->pos.x + cal->wall_camera_plane_dist * cal->ray_dir.x;
 	cal->wall_x -= floor(cal->wall_x);
-	draw->tex_x = (int)(cal->wall_x * draw->ewsn[draw->side].width);
-	if (draw->side == east || draw->side == south)
-		draw->tex_x = draw->ewsn[draw->side].width - draw->tex_x - 1;
+	if (draw->hit_where == '1')
+	{
+		draw->tex_x = (int)(cal->wall_x * draw->ewsn[draw->side].width);
+		if (draw->side == east || draw->side == south)
+			draw->tex_x = draw->ewsn[draw->side].width - draw->tex_x - 1;
+	}
+	else
+	{
+		draw->tex_x = (int)(cal->wall_x * draw->door.img.width);
+		if (draw->side == east || draw->side == south)
+			draw->tex_x = draw->door.img.width - draw->tex_x - 1;
+	}
 }

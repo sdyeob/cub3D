@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:41:42 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 15:04:54 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 16:04:22 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	key_down(int keycode, t_draw *draw)
 		draw->move.back = 1;
 	else if (keycode == KEY_D)
 		draw->move.right = 1;
+	else if (keycode == KEY_SPACE)
+		return (0);
 	return (0);
 }
 

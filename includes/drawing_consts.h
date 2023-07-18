@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_consts.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:17:54 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 21:26:30 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 21:43:05 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@
 # define VELOCITY 0.1
 # define ANGLE_VELOCITY 0.1
 # define MOUSE_ANGLE_RATIO 0.002
+
+# define DOOR_SEARCH_RANGE 0.5
+# define DOOR_MIN_DEGREE 0
+# define DOOR_MAX_DEGREE 30
 
 //fixed value
 # define KEY_ESC 53

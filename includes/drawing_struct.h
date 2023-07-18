@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_struct.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:30:22 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 20:19:18 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 21:44:00 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,22 @@ typedef struct s_img
 	int		height;
 }	t_img;
 
+typedef enum e_door_stat
+{
+	opening = 0,
+	closing = 1
+}	t_door_stat;
+
+typedef struct s_door
+{
+	t_img		img;
+	t_door_stat	stat;
+	int			is_moving;
+	int			degree;
+	int			row;
+	int			col;
+}	t_door;
+
 typedef struct s_draw
 {
 	char		**map;
@@ -65,9 +81,11 @@ typedef struct s_draw
 	void		*win_ptr;
 	t_img		img;
 	t_img		ewsn[4];
+	t_door		door;
 	t_vec_d		pos;
 	t_vec_d		dir;
 	t_vec_i		mouse_pos;
+	char		hit_where;
 	t_side		side;
 	int			wall_height;
 	int			y_start;
