@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_struct.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:30:22 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/17 18:32:36 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:19:18 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,14 @@ typedef struct s_draw
 	int			tex_x;
 	t_move		move;
 }	t_draw;
+
+typedef	struct s_minimap
+{
+	int	h;
+	int	w;
+	int	row;
+	int	col;
+}	t_minimap;
 
 typedef struct s_cal
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_consts.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:17:54 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 14:52:17 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:27:43 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@
 
 # define M_WIDTH 200
 # define M_HEIGHT 200
-# define M_BLOCK_PER_PIXEL 0.05
+# define M_BPP 0.05 //BLOCK_PER_PIXEL
 # define M_PLAYER_RANGE 10
 # define M_SEP 20
+# define PLAYER_COLOR 0xFFFFFF
+# define WALL_COLOR 0x000099
+# define FLOOR_COLOR 0x0033FF
+# define SPACE_COLOR 0x6699FF
+# define OUT_OF_MAP_COLOR 0x00BFFF
 
 # define PLANE_SIZE 0.67
 # define VELOCITY 0.1
