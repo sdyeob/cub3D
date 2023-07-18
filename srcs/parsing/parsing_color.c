@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 
 #include "err_detect.h"
-#include "struct.h"
+#include "map_struct.h"
 #include "libft.h"
 #include "utils.h"
+#include "map_consts.h"
 
 static int	this_is_color(char *splited_line, int idx);
 static void	get_color_inf(t_identifier *identifier, \
@@ -55,9 +56,9 @@ static void	get_color_inf(t_identifier *identifier, \
 	i = -1;
 	while (++i < 3)
 	{
-		if (status == 5)
+		if (status == FLOOR)
 			identifier->f[i] = this_is_color(splited_line, i);
-		else
+		else if (status == CEIL)
 			identifier->c[i] = this_is_color(splited_line, i);
 	}
 }

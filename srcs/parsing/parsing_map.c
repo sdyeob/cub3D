@@ -6,14 +6,14 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:46:26 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/13 19:05:14 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:39:57 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "parsing.h"
 #include "err_detect.h"
-#include "struct.h"
+#include "map_struct.h"
 #include "gnl.h"
 #include "utils.h"
 

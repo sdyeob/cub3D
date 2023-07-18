@@ -6,13 +6,13 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:36:58 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/13 15:04:07 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:39:57 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include "struct.h"
+#include "map_struct.h"
 #include "err_detect.h"
 
 void	add_list_back(t_map_list **head, t_map_list **tail, \

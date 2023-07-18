@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 20:59:02 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/18 20:28:42 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:49:00 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	render_minimap(t_draw *draw)
 		{
 			m.row = floor(draw->pos.y + (m.h - M_HEIGHT / 2) * M_BPP);
 			m.col = floor(draw->pos.x + (m.w - M_WIDTH / 2) * M_BPP);
-			object_color = get_render_object(draw, minimap);
+			object_color = get_render_object(draw, m);
 			my_pixel_put(&draw->img, M_SEP + m.w, M_SEP + m.h, object_color);
 		}
 	}
