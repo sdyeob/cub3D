@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:46:26 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/18 20:39:57 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/18 21:15:12 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,36 @@ void	get_map_inf(t_map_inf *map_inf, int file_fd)
 	first_reading(map_inf, file_fd, &head, &tail);
 	second_reading(map_inf, &head, &tail);
 	map_validity_check(map_inf);
+}
+
+void	first_reading(t_map_inf *map_inf, int file_fd, \
+	t_map_list **head, t_map_list **tail)
+{
+	char	*line;
+	int		line_cnt;
+	int		length;
+
+	line_cnt = 0;
+	line = skip_before_map_nl(file_fd);
+	while (line)
+	{
+		if (line[0] == '\n')
+		{
+			if (free(line), skip_after_map_nl(file_fd))
+				err_detect("new line in map!");
+			break ;
+		}
+		length = line_check(map_inf, line, line_cnt);
+		add_list_back(head, tail, line, length);
+		if (map_inf->m_width < length)
+			map_inf->m_width = length;
+		line_cnt++;
+		free(line);
+		line = get_next_line(file_fd);
+	}
+	if (map_inf->player_loc_x == -1)
+		err_detect("No Player");
+	map_inf->m_height = line_cnt;
 }
 
 static char	*skip_before_map_nl(int file_fd)
@@ -74,57 +104,28 @@ static int	skip_after_map_nl(int file_fd)
 	}
 }
 
-static int	line_check(t_map_inf *map_inf, char *line, int line_cnt)
+static int	line_check(t_map_inf *map_inf, char *line, int height)
 {
-	int	i;
+	int	width;
 
-	i = -1;
+	width = -1;
 	remove_nl(line);
-	while (line[++i])
+	while (line[++width])
 	{
-		if (line[i] == '1' || line[i] == '0' || line[i] == ' ')
+		if (line[width] == '1' || line[width] == '0' \
+			|| line[width] == ' ' || line[width] == 'C')
 			continue ;
-		else if (line[i] == 'N' || line[i] == 'W' \
-			|| line[i] == 'E' || line[i] == 'S')
+		else if (line[width] == 'N' || line[width] == 'W' \
+			|| line[width] == 'E' || line[width] == 'S')
 		{
 			if (map_inf->player_loc_x != -1)
 				err_detect("Multi Player");
-			map_inf->player_loc_x = i;
-			map_inf->player_loc_y = line_cnt;
-			map_inf->player_direct = line[i];
+			map_inf->player_loc_x = width;
+			map_inf->player_loc_y = height;
+			map_inf->player_direct = line[width];
 		}
 		else
 			err_detect("Map element");
 	}
-	return (i);
-}
-
-void	first_reading(t_map_inf *map_inf, int file_fd, \
-	t_map_list **head, t_map_list **tail)
-{
-	char	*line;
-	int		line_cnt;
-	int		length;
-
-	line_cnt = 0;
-	line = skip_before_map_nl(file_fd);
-	while (line)
-	{
-		if (line[0] == '\n')
-		{
-			if (free(line), skip_after_map_nl(file_fd))
-				err_detect("new line in map!");
-			break ;
-		}
-		length = line_check(map_inf, line, line_cnt);
-		add_list_back(head, tail, line, length);
-		if (map_inf->m_width < length)
-			map_inf->m_width = length;
-		line_cnt++;
-		free(line);
-		line = get_next_line(file_fd);
-	}
-	if (map_inf->player_loc_x == -1)
-		err_detect("No Player");
-	map_inf->m_height = line_cnt;
+	return (width);
 }
