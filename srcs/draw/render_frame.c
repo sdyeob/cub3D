@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 16:22:11 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 17:17:33 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	render_frame(t_draw *draw)
 		plane_coef = 2 * x / (double)WIN_WIDTH - 1;
 		cal.ray_dir = add_vec(draw->dir, mult_vec(plane_coef, cal.plane));
 		calculate_vars(&cal, draw);
+		door_tex_correction(&cal, draw);
 		color_wall(draw, x);
 	}
 	render_minimap(draw);

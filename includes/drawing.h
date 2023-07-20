@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 21:44:41 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 17:17:07 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		create_trgb(int t, int r, int g, int b);
 void	door(t_draw *draw);
 void	door_change(t_draw *draw);
 int		door_or_wall(t_cal *cal, t_draw *draw);
+void	door_tex_correction(t_cal *cal, t_draw *draw);
 
 //move.c
 void	move_fov(t_draw *draw);
