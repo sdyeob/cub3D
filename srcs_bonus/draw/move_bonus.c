@@ -6,13 +6,13 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 14:25:26 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:33 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:52:31 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/drawing_struct.h"
-#include "../../includes/drawing_consts.h"
-#include "../../includes/drawing.h"
+#include "drawing_struct_bonus.h"
+#include "drawing_consts_bonus.h"
+#include "drawing_bonus.h"
 
 static int	is_wall(char **map, double y, double x);
 
@@ -25,7 +25,7 @@ void	move_fov(t_draw *draw)
 	new_pos = add_vec(draw->pos, \
 	mult_vec((draw->move.front - draw->move.back) * VELOCITY, draw->dir));
 	new_pos = add_vec(new_pos, mult_vec((draw->move.right - \
-	draw->move.left) * VELOCITY, get_plane_vec(draw->dir)));
+	draw->move.left) * VELOCITY, get_plane_dir_vec(draw->dir)));
 	if (!is_wall(draw->map, new_pos.y, draw->pos.x))
 		draw->pos.y = new_pos.y;
 	if (!is_wall(draw->map, draw->pos.y, new_pos.x))

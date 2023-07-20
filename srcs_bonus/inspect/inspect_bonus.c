@@ -6,13 +6,13 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:29:44 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:37 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:53:06 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
-#include "err_detect.h"
-#include "../../libft/libft.h"
+#include "err_detect_bonus.h"
+#include "libft.h"
 
 void	inspect_arg(int argc, char *argv[])
 {

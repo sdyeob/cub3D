@@ -6,12 +6,12 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:36:30 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:23 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:49:18 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSING_H
-# define PARSING_H
+#ifndef PARSING_BONUS_H
+# define PARSING_BONUS_H
 
 # include "map_struct.h"
 

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   door.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 16:26:33 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:05:41 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:50:57 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
-#include "../../includes/drawing.h"
-#include "../../includes/drawing_struct.h"
-#include "../../includes/drawing_consts.h"
+#include "drawing.h"
+#include "drawing_struct.h"
+#include "drawing_consts.h"
 
 static void	init_door(t_draw *draw, int row, int col, char c);
 

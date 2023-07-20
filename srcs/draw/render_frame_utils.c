@@ -6,15 +6,15 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 22:29:44 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 18:06:30 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:50:57 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 
-#include "../../includes/drawing_struct.h"
-#include "../../includes/drawing_consts.h"
-#include "../../includes/drawing.h"
+#include "drawing_struct.h"
+#include "drawing_consts.h"
+#include "drawing.h"
 
 static void	cal_step_side_ratio(t_cal *cal, t_draw *draw);
 static void	dda(t_cal *cal, t_draw *draw);

@@ -6,21 +6,21 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:40:24 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:35 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:52:53 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 
-#include "../../includes/drawing_struct.h"
-#include "../../includes/drawing_consts.h"
+#include "drawing_struct_bonus.h"
+#include "drawing_consts_bonus.h"
 
-t_vec_d	get_plane_vec(t_vec_d dir)
+t_vec_d	get_plane_dir_vec(t_vec_d dir)
 {
 	t_vec_d	plane;
 
-	plane.x = PLANE_SIZE * dir.y;
-	plane.y = PLANE_SIZE * (-dir.x);
+	plane.x = dir.y;
+	plane.y = (-dir.x);
 	return (plane);
 }
 

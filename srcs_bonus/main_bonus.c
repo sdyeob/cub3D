@@ -6,16 +6,16 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:35:43 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:47 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:54:18 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "inspect.h"
-#include "parsing.h"
-#include "map_struct.h"
-#include "drawing.h"
+#include "inspect_bonus.h"
+#include "parsing_bonus.h"
+#include "map_struct_bonus.h"
+#include "drawing_bonus.h"
 
 void	init_map_inf(t_map_inf *map_inf)
 {

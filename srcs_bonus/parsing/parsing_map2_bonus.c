@@ -6,13 +6,13 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:51:00 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:44 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:54:02 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parsing.h"
-#include "err_detect.h"
-#include "map_struct.h"
+#include "parsing_bonus.h"
+#include "err_detect_bonus.h"
+#include "map_struct_bonus.h"
 #include "libft.h"
 #include <stdlib.h>
 

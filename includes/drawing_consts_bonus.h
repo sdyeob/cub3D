@@ -6,12 +6,12 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:17:54 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:16 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:48:51 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DRAWING_CONSTS_H
-# define DRAWING_CONSTS_H
+#ifndef DRAWING_CONSTS_BONUS_H
+# define DRAWING_CONSTS_BONUS_H
 
 //Value, you can change
 # define W_WIDTH 1024

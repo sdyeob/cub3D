@@ -6,11 +6,11 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 19:03:35 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:30 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:50:37 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/drawing_struct.h"
+#include "drawing_struct_bonus.h"
 
 int	get_tex_color(t_draw *draw, int x, int y)
 {
