@@ -6,15 +6,15 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:48:44 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 21:04:12 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DRAWING_BONUS_H
 # define DRAWING_BONUS_H
 
-# include "drawing_struct.h"
-# include "map_struct.h"
+# include "drawing_struct_bonus.h"
+# include "map_struct_bonus.h"
 
 //draw_cub3d.c
 void	draw_cub3d(t_map_inf *map_info);
