@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:46:26 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/18 21:15:12 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 21:07:12 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,8 +112,7 @@ static int	line_check(t_map_inf *map_inf, char *line, int height)
 	remove_nl(line);
 	while (line[++width])
 	{
-		if (line[width] == '1' || line[width] == '0' \
-			|| line[width] == ' ' || line[width] == 'C')
+		if (line[width] == '1' || line[width] == '0' || line[width] == ' ')
 			continue ;
 		else if (line[width] == 'N' || line[width] == 'W' \
 			|| line[width] == 'E' || line[width] == 'S')

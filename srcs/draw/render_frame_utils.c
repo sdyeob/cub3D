@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 22:29:44 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:50:57 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 21:11:18 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ static void	dda(t_cal *cal, t_draw *draw)
 				draw->side = south;
 		}
 		if (draw->map[cal->map_pos.y][cal->map_pos.x] > '0')
-			cal->hit = door_or_wall(cal, draw);
+			cal->hit = 0;
 	}
 }
 
@@ -127,16 +127,7 @@ void	cal_tex_x(t_cal *cal, t_draw *draw)
 		cal->wall_x = \
 		draw->pos.x + cal->wall_camera_plane_dist * cal->ray_dir.x;
 	cal->wall_x -= floor(cal->wall_x);
-	if (draw->hit_where == '1')
-	{
-		draw->tex_x = (int)(cal->wall_x * draw->ewsn[draw->side].width);
-		if (draw->side == east || draw->side == south)
-			draw->tex_x = draw->ewsn[draw->side].width - draw->tex_x - 1;
-	}
-	else
-	{
-		draw->tex_x = (int)(cal->wall_x * draw->door.img.width);
-		if (draw->side == east || draw->side == south)
-			draw->tex_x = draw->door.img.width - draw->tex_x - 1;
-	}
+	draw->tex_x = (int)(cal->wall_x * draw->ewsn[draw->side].width);
+	if (draw->side == east || draw->side == south)
+		draw->tex_x = draw->ewsn[draw->side].width - draw->tex_x - 1;
 }

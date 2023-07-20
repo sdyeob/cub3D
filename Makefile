@@ -17,8 +17,7 @@ SRCS := $(addprefix srcs/, main.c err_detect.c utils.c ) \
 			parsing_color.c parsing_map.c parsing_map2.c \
 			map_list.c map_validity.c ) \
 		$(addprefix srcs/draw/, color.c draw_cub3d.c hook.c \
-		render_frame.c render_frame_utils.c vector.c \
-		render_minimap.c move.c door.c)
+		render_frame.c render_frame_utils.c vector.c move.c)
 
 SRCS_B := $(addprefix srcs_bonus/, main_bonus.c err_detect_bonus.c utils_bonus.c ) \
 		$(addprefix srcs_bonus/inspect/, inspect_bonus.c ) \

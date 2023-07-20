@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:41:42 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:51:53 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 21:10:10 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	destroy(t_draw *draw)
 {
 	mlx_destroy_window(draw->mlx_ptr, draw->win_ptr);
 	mlx_destroy_image(draw->mlx_ptr, draw->img.img_ptr);
-	mlx_destroy_image(draw->mlx_ptr, draw->door.img.img_ptr);
 	mlx_destroy_image(draw->mlx_ptr, draw->ewsn[east].img_ptr);
 	mlx_destroy_image(draw->mlx_ptr, draw->ewsn[west].img_ptr);
 	mlx_destroy_image(draw->mlx_ptr, draw->ewsn[south].img_ptr);
@@ -49,8 +48,6 @@ int	key_down(int keycode, t_draw *draw)
 		draw->move.back = 1;
 	else if (keycode == KEY_D)
 		draw->move.right = 1;
-	else if (keycode == KEY_SPACE)
-		door(draw);
 	return (0);
 }
 
@@ -73,8 +70,6 @@ int	key_up(int keycode, t_draw *draw)
 
 int	mouse_hook(int x, int y, t_draw *draw)
 {
-	if (draw->door.is_moving)
-		return (0);
 	draw->dir = rotate_vec(draw->dir, \
 	(x - draw->mouse_pos.x) * MOUSE_ANGLE_RATIO);
 	mlx_mouse_move(draw->win_ptr, W_WIDTH / 2, W_HEIGHT / 2);

@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 19:03:35 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:50:57 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 21:09:33 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ int	get_tex_color(t_draw *draw, int x, int y)
 	t_img	data;
 	char	*dst;
 
-	if (draw->hit_where == '1')
-		data = draw->ewsn[draw->side];
-	else
-		data = draw->door.img;
+	data = draw->ewsn[draw->side];
 	dst = data.addr + (y * data.line_length + x * (data.bits_per_pixel / 8));
 	return (*(int *)dst);
 }
