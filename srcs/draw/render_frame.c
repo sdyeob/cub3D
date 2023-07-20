@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 17:30:11 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:22:11 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ static void	color_wall(t_draw *draw, int x)
 	double	tex_y_pos;
 	int		y;
 
-	step = 1.0 * draw->ewsn[draw->side].height / draw->wall_height;
+	if (draw->hit_where == '1')
+		step = 1.0 * draw->ewsn[draw->side].height / draw->wall_height;
+	else
+		step = 1.0 * draw->door.img.height / draw->wall_height;
 	tex_y_pos = (draw->y_start - WIN_HEIGHT / 2 + draw->wall_height / 2) * step;
 	y = -1;
 	while (++y < WIN_HEIGHT)
