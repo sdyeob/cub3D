@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:41:42 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 16:04:22 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/19 20:02:41 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int	key_up(int keycode, t_draw *draw)
 
 int	mouse_hook(int x, int y, t_draw *draw)
 {
+	if (draw->door.is_moving)
+		return (0);
 	draw->dir = rotate_vec(draw->dir, \
 	(x - draw->mouse_pos.x) * MOUSE_ANGLE_RATIO);
 	mlx_mouse_move(draw->win_ptr, WIN_WIDTH / 2, WIN_HEIGHT / 2);

@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:17:54 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 21:43:05 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/19 19:36:27 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 # define DOOR_MAX_DEGREE 30
 
 //fixed value
+# define KEY_SPACE 49
 # define KEY_ESC 53
 # define KEY_LEFT 123
 # define KEY_RIGHT 124

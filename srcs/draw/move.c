@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 14:25:26 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 21:23:04 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/19 20:01:57 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	move_fov(t_draw *draw)
 {
 	t_vec_d	new_pos;
 
-	// if (draw->door.is_moving)
-	// 	return ;
+	if (draw->door.is_moving)
+		return ;
 	new_pos = add_vec(draw->pos, \
 	mult_vec((draw->move.front - draw->move.back) * VELOCITY, draw->dir));
 	new_pos = add_vec(new_pos, mult_vec((draw->move.right - \
