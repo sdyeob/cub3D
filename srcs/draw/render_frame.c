@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_frame.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 17:17:33 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 18:06:30 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int	render_frame(t_draw *draw)
 	move_fov(draw);
 	cal.plane = get_plane_vec(draw->dir);
 	x = -1;
-	while (++x < WIN_WIDTH)
+	while (++x < W_WIDTH)
 	{
-		plane_coef = 2 * x / (double)WIN_WIDTH - 1;
+		plane_coef = 2 * x / (double)W_WIDTH - 1;
 		cal.ray_dir = add_vec(draw->dir, mult_vec(plane_coef, cal.plane));
 		calculate_vars(&cal, draw);
 		door_tex_correction(&cal, draw);
@@ -52,9 +52,9 @@ static void	color_wall(t_draw *draw, int x)
 		step = 1.0 * draw->ewsn[draw->side].height / draw->wall_height;
 	else
 		step = 1.0 * draw->door.img.height / draw->wall_height;
-	tex_y_pos = (draw->y_start - WIN_HEIGHT / 2 + draw->wall_height / 2) * step;
+	tex_y_pos = (draw->y_start - W_HEIGHT / 2 + draw->wall_height / 2) * step;
 	y = -1;
-	while (++y < WIN_HEIGHT)
+	while (++y < W_HEIGHT)
 	{
 		if (y < draw->y_start)
 			my_pixel_put(&(draw->img), x, y, draw->c_color);

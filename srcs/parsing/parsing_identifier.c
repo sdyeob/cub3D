@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:10:13 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 16:59:27 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 19:33:14 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	get_identifier(t_identifier *identifier, int file_fd)
 	free_splited_line(splited_line);
 	if (identifier_num != 6)
 		err_detect("Error : Few or More identifier");
-
 }
 
 static int	is_identifier(char *line)
@@ -122,8 +121,7 @@ static char	**get_splited_line(int file_fd, int *status)
 			*status = is_identifier(splited_line[0]);
 			if (*status == NOT_IDENTIFIER)
 				err_detect("Error : Identifier Or Information");
-			free(line);
-			return (splited_line);
+			return (free(line), splited_line);
 		}
 		else
 			err_detect("Error : Few Map information");

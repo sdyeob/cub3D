@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:36:30 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/18 20:48:30 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 17:56:41 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 void	first_reading(t_map_inf *map_inf, int file_fd, \
 	t_map_list **head, t_map_list **tail);
-void	second_reading(t_map_inf *map_inf, t_map_list **head, t_map_list **tail);
+void	second_reading(t_map_inf *map_inf, \
+	t_map_list **head, t_map_list **tail);
 void	map_validity_check(t_map_inf *map_inf);
 void	get_identifier(t_identifier *identifier, int file_fd);
 void	get_color(t_identifier *identifier, char *splited_line, int status);

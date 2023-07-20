@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_frame_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 22:29:44 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 17:15:59 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 18:06:30 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,14 +108,14 @@ void	cal_perp_dist_y_range(t_cal *cal, t_draw *draw)
 	else
 		cal->wall_camera_plane_dist = \
 		(cal->map_pos.y - draw->pos.y + (1 - cal->step.y) / 2) / cal->ray_dir.y;
-	draw->wall_height = (int)(WIN_HEIGHT * BLOCK_PER_WIN\
+	draw->wall_height = (int)(W_HEIGHT * BLOCK_PER_WIN \
 							/ cal->wall_camera_plane_dist);
-    draw->y_start = -draw->wall_height / 2 + WIN_HEIGHT / 2;
-	draw->y_end = draw->wall_height / 2 + WIN_HEIGHT / 2;
-	if(draw->y_start < 0)
+	draw->y_start = -draw->wall_height / 2 + W_HEIGHT / 2;
+	draw->y_end = draw->wall_height / 2 + W_HEIGHT / 2;
+	if (draw->y_start < 0)
 		draw->y_start = 0;
-	if(draw->y_end >= WIN_HEIGHT)
-		draw->y_end = WIN_HEIGHT - 1;//해야 하나?
+	if (draw->y_end >= W_HEIGHT)
+		draw->y_end = W_HEIGHT - 1;
 }
 
 void	cal_tex_x(t_cal *cal, t_draw *draw)

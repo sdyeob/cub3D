@@ -6,13 +6,12 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:35:43 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/18 20:39:57 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 19:36:24 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "err.h"
 #include "inspect.h"
 #include "parsing.h"
 #include "map_struct.h"
@@ -34,27 +33,6 @@ void	init_map_inf(t_map_inf *map_inf)
 	map_inf->identifier.s = NULL;
 }
 
-void	free_map_inf(t_map_inf *map_inf)
-{
-	int	i;
-
-	if (map_inf->identifier.n)
-		free(map_inf->identifier.n);
-	if (map_inf->identifier.w)
-		free(map_inf->identifier.w);
-	if (map_inf->identifier.e)
-		free(map_inf->identifier.e);
-	if (map_inf->identifier.s)
-		free(map_inf->identifier.s);
-	if (map_inf->map)
-	{
-		i = -1;
-		while (map_inf->map[++i])
-			free(map_inf->map[i]);
-		free(map_inf->map);
-	}
-}
-
 int	main(int argc, char *argv[])
 {
 	int			file_fd;
@@ -65,8 +43,7 @@ int	main(int argc, char *argv[])
 	init_map_inf(&map_inf);
 	get_identifier(&(map_inf.identifier), file_fd);
 	get_map_inf(&map_inf, file_fd);
-	draw_cub3d(&map_inf);
 	close(file_fd);
-	free_map_inf(&map_inf);
+	draw_cub3d(&map_inf);
 	return (0);
 }
