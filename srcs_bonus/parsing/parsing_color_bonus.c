@@ -1,19 +1,19 @@
 /* ************************************************************************** */
-/*																			*/
-/*														:::	  ::::::::   */
-/*   parsing_color.c									:+:	  :+:	:+:   */
-/*													+:+ +:+		 +:+	 */
-/*   By: dongyshi <dongyshi@student.42.fr>		  +#+  +:+	   +#+		*/
-/*												+#+#+#+#+#+   +#+		   */
-/*   Created: 2023/07/11 16:44:47 by dongyshi		  #+#	#+#			 */
-/*   Updated: 2023/07/11 18:08:15 by dongyshi		 ###   ########.fr	   */
-/*																			*/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_color_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/20 20:45:32 by dongyshi          #+#    #+#             */
+/*   Updated: 2023/07/20 20:53:23 by dongyshi         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
-#include "err_detect.h"
-#include "map_struct.h"
+#include "err_detect_bonus.h"
+#include "map_struct_bonus.h"
 #include "libft.h"
-#include "map_consts.h"
+#include "map_consts_bonus.h"
 
 static int	this_is_color(char *splited_line, int idx);
 static void	get_color_inf(t_identifier *identifier, \

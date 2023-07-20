@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 19:03:35 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/19 20:05:14 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:50:57 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/drawing_struct.h"
+#include "drawing_struct.h"
 
 int	get_tex_color(t_draw *draw, int x, int y)
 {

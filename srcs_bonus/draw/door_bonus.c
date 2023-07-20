@@ -6,14 +6,14 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 16:26:33 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:31 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:52:12 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
-#include "../../includes/drawing.h"
-#include "../../includes/drawing_struct.h"
-#include "../../includes/drawing_consts.h"
+#include "drawing_bonus.h"
+#include "drawing_struct_bonus.h"
+#include "drawing_consts_bonus.h"
 
 static void	init_door(t_draw *draw, int row, int col, char c);
 

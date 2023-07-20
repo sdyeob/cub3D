@@ -6,12 +6,12 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:14 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:48:44 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DRAWING_H
-# define DRAWING_H
+#ifndef DRAWING_BONUS_H
+# define DRAWING_BONUS_H
 
 # include "drawing_struct.h"
 # include "map_struct.h"
@@ -49,7 +49,7 @@ int		destroy(t_draw *draw);
 int		mouse_hook(int x, int y, t_draw *draw);
 
 //vector.c
-t_vec_d	get_plane_vec(t_vec_d dir);
+t_vec_d	get_plane_dir_vec(t_vec_d dir);
 t_vec_d	rotate_vec(t_vec_d dir, double angle);
 t_vec_d	add_vec(t_vec_d a, t_vec_d b);
 t_vec_d	mult_vec(double scalar, t_vec_d vec);

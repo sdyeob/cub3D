@@ -6,15 +6,15 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 20:59:02 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:35 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:52:48 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 
-#include "drawing.h"
-#include "drawing_struct.h"
-#include "drawing_consts.h"
+#include "drawing_bonus.h"
+#include "drawing_struct_bonus.h"
+#include "drawing_consts_bonus.h"
 
 static inline int	is_in_map(t_draw *draw, int player_row, int player_col);
 static inline int	is_player(int w, int h);

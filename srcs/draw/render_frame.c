@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   render_frame.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 19:47:48 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:51:53 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../minilibx_opengl_20191021/mlx.h"
-#include "../../includes/drawing_struct.h"
-#include "../../includes/drawing_consts.h"
-#include "../../includes/drawing.h"
+#include "mlx.h"
+#include "drawing_struct.h"
+#include "drawing_consts.h"
+#include "drawing.h"
 
 static void	color_wall(t_draw *draw, int x);
 

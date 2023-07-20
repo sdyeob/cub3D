@@ -6,16 +6,16 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:41:42 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 18:08:23 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:51:53 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-#include "../../minilibx_opengl_20191021/mlx.h"
-#include "../../includes/drawing.h"
-#include "../../includes/drawing_struct.h"
-#include "../../includes/drawing_consts.h"
+#include "mlx.h"
+#include "drawing.h"
+#include "drawing_struct.h"
+#include "drawing_consts.h"
 
 static void	free_map_inf(t_map_inf *map_inf);
 

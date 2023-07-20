@@ -6,19 +6,19 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:10:13 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:42 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:53:33 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "err_detect.h"
-#include "inspect.h"
+#include "err_detect_bonus.h"
+#include "inspect_bonus.h"
 #include "libft.h"
 #include "gnl.h"
-#include "map_struct.h"
-#include "utils.h"
-#include "parsing.h"
-#include "map_consts.h"
+#include "map_struct_bonus.h"
+#include "utils_bonus.h"
+#include "parsing_bonus.h"
+#include "map_consts_bonus.h"
 
 static int	is_identifier(char *line);
 static int	fill_identifier(t_identifier *identifier, \

@@ -6,15 +6,15 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 18:06:51 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:51:53 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../minilibx_opengl_20191021/mlx.h"
-#include "../../includes/map_struct.h"
-#include "../../includes/drawing_consts.h"
-#include "../../includes/drawing_struct.h"
-#include "../../includes/drawing.h"
+#include "mlx.h"
+#include "map_struct.h"
+#include "drawing_consts.h"
+#include "drawing_struct.h"
+#include "drawing.h"
 
 static void	init_textures(t_draw *draw, t_map_inf *map_info);
 static void	init_color_move(t_draw *draw, t_map_inf *map_info);

@@ -6,16 +6,16 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:46:26 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:43 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:53:50 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "parsing.h"
-#include "err_detect.h"
-#include "map_struct.h"
+#include "parsing_bonus.h"
+#include "err_detect_bonus.h"
+#include "map_struct_bonus.h"
 #include "gnl.h"
-#include "utils.h"
+#include "utils_bonus.h"
 
 static int	line_check(t_map_inf *map_inf, char *line, int line_cnt);
 static char	*skip_before_map_nl(int file_fd);

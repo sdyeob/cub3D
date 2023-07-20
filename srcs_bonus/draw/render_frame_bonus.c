@@ -6,14 +6,14 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:22:33 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:52:36 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../minilibx_opengl_20191021/mlx.h"
-#include "../../includes/drawing_struct.h"
-#include "../../includes/drawing_consts.h"
-#include "../../includes/drawing.h"
+#include "mlx.h"
+#include "drawing_struct_bonus.h"
+#include "drawing_consts_bonus.h"
+#include "drawing_bonus.h"
 
 static void	color_wall(t_draw *draw, int x);
 
@@ -24,7 +24,7 @@ int	render_frame(t_draw *draw)
 	double		plane_coef;
 
 	move_fov(draw);
-	cal.plane = get_plane_vec(draw->dir);
+	cal.plane = get_plane_dir_vec(mult_vec(PLANE_SIZE, draw->dir));
 	x = -1;
 	while (++x < W_WIDTH)
 	{
