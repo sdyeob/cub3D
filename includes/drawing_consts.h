@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:17:54 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/19 19:36:27 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:24:50 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,16 @@
 # define SPACE_COLOR 0x6699FF
 # define OUT_OF_MAP_COLOR 0x00BFFF
 
-# define PLANE_SIZE 0.67
+# define BLOCK_PER_WIN 0.5
+# define PLANE_SIZE 1.4
 # define VELOCITY 0.1
 # define ANGLE_VELOCITY 0.1
 # define MOUSE_ANGLE_RATIO 0.002
 
-# define DOOR_SEARCH_RANGE 0.5
+# define DOOR_SEARCH_RANGE 1.0
 # define DOOR_MIN_DEGREE 0
 # define DOOR_MAX_DEGREE 30
+# define DOOR_XPM_PATH "test_files/door.xpm"
 
 //fixed value
 # define KEY_SPACE 49

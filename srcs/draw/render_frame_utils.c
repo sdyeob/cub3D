@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 22:29:44 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 15:12:12 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:06:23 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,8 +135,10 @@ void	cal_tex_x(t_cal *cal, t_draw *draw)
 	}
 	else
 	{
-		if (draw->hit_where == 'M')
-			cal->wall_x = 
+		if (draw->hit_where == 'M' && cal->wall_x < 0.5)
+			cal->wall_x += 0.5 * draw->door.degree / DOOR_MAX_DEGREE;
+		else if (draw->hit_where == 'M' && cal->wall_x > 0.5)
+			cal->wall_x -= 0.5 * draw->door.degree / DOOR_MAX_DEGREE;
 		draw->tex_x = (int)(cal->wall_x * draw->door.img.width);
 		if (draw->side == east || draw->side == south)
 			draw->tex_x = draw->door.img.width - draw->tex_x - 1;

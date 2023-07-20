@@ -17,7 +17,7 @@ SRCS := $(addprefix srcs/, main.c err_detect.c utils.c ) \
 			map_list.c map_validity.c ) \
 		$(addprefix srcs/draw/, color.c draw_cub3d.c hook.c \
 		render_frame.c render_frame_utils.c vector.c \
-		render_minimap.c move.c)
+		render_minimap.c move.c door.c)
 
 OBJS := $(SRCS:.c=.o)
 

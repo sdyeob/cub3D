@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 16:26:33 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 21:31:52 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:10:02 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,9 @@ int	door_or_wall(t_cal *cal, t_draw *draw)
 	draw->hit_where = 'M';
 	cal_perp_dist_y_range(cal, draw);
 	cal_tex_x(cal, draw);
-	if (cal->wall_x <= 0.5 - draw->door.degree / (double)DOOR_MAX_DEGREE)
+	if (cal->wall_x <= 0.5 - 0.5 * draw->door.degree / DOOR_MAX_DEGREE)
 		return (0);
-	else if (cal->wall_x >= 0.5 + draw->door.degree / (double)DOOR_MAX_DEGREE)
+	else if (cal->wall_x >= 0.5 + 0.5 * draw->door.degree / DOOR_MAX_DEGREE)
 		return (0);
 	return (1);
 }
