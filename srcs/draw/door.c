@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 16:26:33 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 17:38:29 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 20:05:41 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,6 @@ void	door_tex_correction(t_cal *cal, t_draw *draw)
 	else if (cal->wall_x > 0.5)
 		cal->wall_x -= 0.5 * draw->door.degree / DOOR_MAX_DEGREE;
 	draw->tex_x = (int)(cal->wall_x * draw->door.img.width);
-		if (draw->side == east || draw->side == south)
-			draw->tex_x = draw->door.img.width - draw->tex_x - 1;
+	if (draw->side == east || draw->side == south)
+		draw->tex_x = draw->door.img.width - draw->tex_x - 1;
 }

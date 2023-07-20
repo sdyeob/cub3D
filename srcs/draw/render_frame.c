@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_frame.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:05:41 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 18:06:30 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 19:47:48 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	render_frame(t_draw *draw)
 	double		plane_coef;
 
 	move_fov(draw);
-	cal.plane = get_plane_vec(draw->dir);
+	cal.plane = get_plane_dir_vec(mult_vec(PLANE_SIZE, draw->dir));
 	x = -1;
 	while (++x < W_WIDTH)
 	{

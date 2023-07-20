@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 17:17:07 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 19:47:59 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		destroy(t_draw *draw);
 int		mouse_hook(int x, int y, t_draw *draw);
 
 //vector.c
-t_vec_d	get_plane_vec(t_vec_d dir);
+t_vec_d	get_plane_dir_vec(t_vec_d dir);
 t_vec_d	rotate_vec(t_vec_d dir, double angle);
 t_vec_d	add_vec(t_vec_d a, t_vec_d b);
 t_vec_d	mult_vec(double scalar, t_vec_d vec);
