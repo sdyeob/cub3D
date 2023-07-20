@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_consts.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:17:54 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 17:18:11 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 19:26:59 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define DRAWING_CONSTS_H
 
 //Value, you can change
-# define WIN_WIDTH 1024
-# define WIN_HEIGHT 800
+# define W_WIDTH 1024
+# define W_HEIGHT 800
 
 # define M_WIDTH 200
 # define M_HEIGHT 200
@@ -35,7 +35,7 @@
 # define ANGLE_VELOCITY 0.1
 # define MOUSE_ANGLE_RATIO 0.002
 
-# define DOOR_SEARCH_RANGE 1.0
+# define DOOR_SEARCH_RANGE 0.9
 # define DOOR_MIN_DEGREE 0
 # define DOOR_MAX_DEGREE 30
 # define DOOR_XPM_PATH "test_files/door.xpm"

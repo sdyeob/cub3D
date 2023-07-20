@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hook.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:41:42 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 16:24:04 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 18:08:23 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,18 @@
 #include "../../includes/drawing_struct.h"
 #include "../../includes/drawing_consts.h"
 
+static void	free_map_inf(t_map_inf *map_inf);
+
 int	destroy(t_draw *draw)
 {
 	mlx_destroy_window(draw->mlx_ptr, draw->win_ptr);
 	mlx_destroy_image(draw->mlx_ptr, draw->img.img_ptr);
+	mlx_destroy_image(draw->mlx_ptr, draw->door.img.img_ptr);
 	mlx_destroy_image(draw->mlx_ptr, draw->ewsn[east].img_ptr);
 	mlx_destroy_image(draw->mlx_ptr, draw->ewsn[west].img_ptr);
 	mlx_destroy_image(draw->mlx_ptr, draw->ewsn[south].img_ptr);
 	mlx_destroy_image(draw->mlx_ptr, draw->ewsn[north].img_ptr);
+	free_map_inf(draw->map_inf);
 	exit(0);
 	return (0);
 }
@@ -73,8 +77,29 @@ int	mouse_hook(int x, int y, t_draw *draw)
 		return (0);
 	draw->dir = rotate_vec(draw->dir, \
 	(x - draw->mouse_pos.x) * MOUSE_ANGLE_RATIO);
-	mlx_mouse_move(draw->win_ptr, WIN_WIDTH / 2, WIN_HEIGHT / 2);
-	draw->mouse_pos.x = WIN_WIDTH / 2;
+	mlx_mouse_move(draw->win_ptr, W_WIDTH / 2, W_HEIGHT / 2);
+	draw->mouse_pos.x = W_WIDTH / 2;
 	draw->mouse_pos.y = y;
 	return (0);
+}
+
+static void	free_map_inf(t_map_inf *map_inf)
+{
+	int	i;
+
+	if (map_inf->identifier.n)
+		free(map_inf->identifier.n);
+	if (map_inf->identifier.w)
+		free(map_inf->identifier.w);
+	if (map_inf->identifier.e)
+		free(map_inf->identifier.e);
+	if (map_inf->identifier.s)
+		free(map_inf->identifier.s);
+	if (map_inf->map)
+	{
+		i = -1;
+		while (map_inf->map[++i])
+			free(map_inf->map[i]);
+		free(map_inf->map);
+	}
 }

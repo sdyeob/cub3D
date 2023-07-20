@@ -6,14 +6,14 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 22:14:21 by sindong-yeo       #+#    #+#             */
-/*   Updated: 2023/07/18 20:40:13 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 17:56:32 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_STRUCT_H
 # define MAP_STRUCT_H
 
-typedef struct s_map_list t_map_list;
+typedef struct s_map_list	t_map_list;
 
 struct s_map_list
 {

@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_struct.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:30:22 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 21:44:00 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 18:12:26 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DRAWING_STRUCT_H
 # define DRAWING_STRUCT_H
+
+# include "map_struct.h"
 
 typedef struct s_vec_d
 {
@@ -92,9 +94,10 @@ typedef struct s_draw
 	int			y_end;
 	int			tex_x;
 	t_move		move;
+	t_map_inf	*map_inf;
 }	t_draw;
 
-typedef	struct s_minimap
+typedef struct s_minimap
 {
 	int	h;
 	int	w;

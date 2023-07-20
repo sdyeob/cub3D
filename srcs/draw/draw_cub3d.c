@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_cub3d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 15:57:21 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 18:06:51 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ void	draw_cub3d(t_map_inf *map_info)
 
 static void	init_draw(t_draw *draw, t_map_inf *map_info)
 {
+	draw->map_inf = map_info;
 	draw->map = map_info->map;
 	draw->m_height = map_info->m_height;
 	draw->m_width = map_info->m_width;
 	draw->mlx_ptr = mlx_init();
-	draw->win_ptr = mlx_new_window(draw->mlx_ptr, \
-	WIN_WIDTH, WIN_HEIGHT, "cub3D");
-	draw->img.img_ptr = mlx_new_image(draw->mlx_ptr, WIN_WIDTH, WIN_HEIGHT);
+	draw->win_ptr = mlx_new_window(draw->mlx_ptr, W_WIDTH, W_HEIGHT, "cub3D");
+	draw->img.img_ptr = mlx_new_image(draw->mlx_ptr, W_WIDTH, W_HEIGHT);
 	draw->img.addr = mlx_get_data_addr(draw->img.img_ptr, \
 	&(draw->img.bits_per_pixel), &(draw->img.line_length), &(draw->img.endian));
 	draw->map[map_info->player_loc_y][map_info->player_loc_x] = '0';

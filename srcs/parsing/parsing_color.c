@@ -13,7 +13,6 @@
 #include "err_detect.h"
 #include "map_struct.h"
 #include "libft.h"
-#include "utils.h"
 #include "map_consts.h"
 
 static int	this_is_color(char *splited_line, int idx);
