@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:40:24 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 17:50:14 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 19:46:11 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 #include "../../includes/drawing_struct.h"
 #include "../../includes/drawing_consts.h"
 
-t_vec_d	get_plane_vec(t_vec_d dir)
+t_vec_d	get_plane_dir_vec(t_vec_d dir)
 {
 	t_vec_d	plane;
 
-	plane.x = PLANE_SIZE * dir.y;
-	plane.y = PLANE_SIZE * (-dir.x);
+	plane.x = dir.y;
+	plane.y = (-dir.x);
 	return (plane);
 }
 
