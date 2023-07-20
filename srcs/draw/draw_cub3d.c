@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_cub3d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/18 20:48:41 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/19 20:00:56 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 static void	init_textures(t_draw *draw, t_map_inf *map_info);
 static void	init_color_move(t_draw *draw, t_map_inf *map_info);
 static void	init_draw(t_draw *draw, t_map_inf *map_info);
+static void	init_door(t_draw *draw, t_map_inf *map_info);
 
 void	draw_cub3d(t_map_inf *map_info)
 {
@@ -59,6 +60,7 @@ static void	init_draw(t_draw *draw, t_map_inf *map_info)
 		draw->dir.y = 1;
 	init_textures(draw, map_info);
 	init_color_move(draw, map_info);
+	init_door(draw, map_info);
 }
 
 static void	init_textures(t_draw *draw, t_map_inf *map_info)
@@ -104,4 +106,16 @@ static void	init_color_move(t_draw *draw, t_map_inf *map_info)
 	mlx_mouse_get_pos(draw->win_ptr, \
 	&draw->mouse_pos.x, &draw->mouse_pos.y);
 	mlx_mouse_hide();
+}
+
+static void	init_door(t_draw *draw, t_map_inf *map_info)
+{
+	t_img	*img;
+
+	img = &(draw->door.img);
+	img->img_ptr = mlx_xpm_file_to_image(draw->mlx_ptr, \
+	map_info->identifier.d, &(img->width), &(img->height));
+	img->addr = mlx_get_data_addr(img->img_ptr, \
+	&(img->bits_per_pixel), &(img->line_length), &(img->endian));
+	draw->door.is_moving = 0;
 }
