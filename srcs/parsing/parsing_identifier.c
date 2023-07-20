@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:10:13 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/18 20:47:18 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:59:27 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ static void	inspect_xpm_extension(char *splited_line)
 static int	fill_identifier(t_identifier *identifier, \
 	char *splited_line, int status)
 {
-	remove_nl(splited_line);
 	if (NORTH <= status && status <= SOUTH)
 		inspect_xpm_extension(splited_line);
 	if (status == NORTH && !identifier->n)
@@ -116,6 +115,7 @@ static char	**get_splited_line(int file_fd, int *status)
 				free(line);
 				continue ;
 			}
+			remove_nl(line);
 			splited_line = ft_split(line, ' ');
 			if (inspect_splited_line(splited_line) != 2)
 				err_detect("Error : Identifier");

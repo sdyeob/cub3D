@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:18:22 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/18 20:39:57 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:45:37 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	map_validity_check(t_map_inf *map_inf)
 				|| j == 0 || j == map_inf->m_width - 1)
 			{
 				if (!(map_inf->map[i][j] == ' ' || map_inf->map[i][j] == '1'))
-					err_detect("Map is unclosed");
+					err_detect("Map is weird");
 			}
 			if (map_inf->map[i][j] == ' ')
 				is_close(map_inf, i, j);
