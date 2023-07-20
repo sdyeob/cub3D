@@ -6,10 +6,11 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 16:26:33 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 16:10:02 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/20 17:38:29 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <math.h>
 #include "../../includes/drawing.h"
 #include "../../includes/drawing_struct.h"
 #include "../../includes/drawing_consts.h"
@@ -27,6 +28,9 @@ void	door(t_draw *draw)
 	mult_vec(DOOR_SEARCH_RANGE, draw->dir));
 	row = (int)door_pos.y;
 	col = (int)door_pos.x;
+	if ((int)fabs((double)(col - (int)draw->pos.x)) == \
+	(int)fabs((double)(row - (int)draw->pos.y)))
+		return ;
 	c = draw->map[row][col];
 	if (c == 'C' || c == 'M' || c == 'O')
 		init_door(draw, row, col, c);
@@ -83,9 +87,21 @@ int	door_or_wall(t_cal *cal, t_draw *draw)
 	draw->hit_where = 'M';
 	cal_perp_dist_y_range(cal, draw);
 	cal_tex_x(cal, draw);
-	if (cal->wall_x <= 0.5 - 0.5 * draw->door.degree / DOOR_MAX_DEGREE)
-		return (0);
-	else if (cal->wall_x >= 0.5 + 0.5 * draw->door.degree / DOOR_MAX_DEGREE)
+	if (cal->wall_x <= 0.5 - 0.5 * draw->door.degree / DOOR_MAX_DEGREE \
+	|| cal->wall_x >= 0.5 + 0.5 * draw->door.degree / DOOR_MAX_DEGREE)
 		return (0);
 	return (1);
+}
+
+void	door_tex_correction(t_cal *cal, t_draw *draw)
+{
+	if (draw->hit_where != 'M')
+		return ;
+	if (cal->wall_x < 0.5)
+		cal->wall_x += 0.5 * draw->door.degree / DOOR_MAX_DEGREE;
+	else if (cal->wall_x > 0.5)
+		cal->wall_x -= 0.5 * draw->door.degree / DOOR_MAX_DEGREE;
+	draw->tex_x = (int)(cal->wall_x * draw->door.img.width);
+		if (draw->side == east || draw->side == south)
+			draw->tex_x = draw->door.img.width - draw->tex_x - 1;
 }
