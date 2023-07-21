@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   err_detect.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 19:58:03 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/11 22:18:49 by sindong-yeo      ###   ########.fr       */
+/*   Updated: 2023/07/21 16:02:52 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
-#include "../libft/libft.h"
+#include "libft.h"
 
 void	err_detect(const char *str)
 {

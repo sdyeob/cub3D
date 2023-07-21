@@ -6,12 +6,11 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:35:43 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 19:36:24 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:03:23 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
 #include "inspect.h"
 #include "parsing.h"
 #include "map_struct.h"

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   inspect.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:29:44 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/11 22:16:24 by sindong-yeo      ###   ########.fr       */
+/*   Updated: 2023/07/21 16:02:07 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include "err_detect.h"
-#include "../../libft/libft.h"
+#include "libft.h"
 
 void	inspect_arg(int argc, char *argv[])
 {
