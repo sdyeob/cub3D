@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   draw_cub3d_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/21 15:38:23 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:01:47 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "err_detect.h"
+#include "err_detect_bonus.h"
 #include "map_struct_bonus.h"
 #include "drawing_consts_bonus.h"
 #include "drawing_struct_bonus.h"

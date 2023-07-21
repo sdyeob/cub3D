@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 14:25:26 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 21:10:18 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:00:25 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	is_wall(char **map, double y, double x)
 
 	row = (int)y;
 	col = (int)x;
-	if (map[row][col] == '0' || 'O' == map[row][col])
+	if (map[row][col] == '0')
 		return (0);
 	return (1);
 }

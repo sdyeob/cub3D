@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:47:08 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/21 15:40:54 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 15:52:01 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	*mlx_xpm_file_to_image_s(void *xvar, char *file, \
 	int *width, int *height)
 {
 	void	*re;
-	
+
 	re = mlx_xpm_file_to_image(xvar, file, width, height);
 	if (re == NULL)
 		err_detect("Non exist file");
