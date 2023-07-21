@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:10:13 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/21 15:57:09 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 20:28:31 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,15 @@ static void	inspect_xpm_extension(char *splited_line)
 	int	length;
 
 	length = ft_strlen(splited_line);
-	if (length < 5 || !(splited_line[length - 4] == '.' \
+	if (length <= 4)
+		err_detect("Information");
+	if (!(splited_line[length - 4] == '.' \
 		&& splited_line[length - 3] == 'x' \
 		&& splited_line[length - 2] == 'p' \
 		&& splited_line[length - 1] == 'm'))
 		err_detect("Information");
+	if (splited_line[length - 5] == '/')
+		err_detect("Argument is Wrong");
 }
 
 static int	fill_identifier(t_identifier *identifier, \
@@ -116,7 +120,7 @@ static char	**get_splited_line(int file_fd, int *status)
 			}
 			remove_nl(line);
 			splited_line = ft_split(line, ' ');
-			if (inspect_splited_line(splited_line) != 2)
+			if (get_splited_line_height(splited_line) != 2)
 				err_detect("Identifier");
 			*status = is_identifier(splited_line[0]);
 			if (*status == NOT_IDENTIFIER)

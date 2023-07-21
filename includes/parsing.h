@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 16:36:30 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 17:56:41 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 20:16:31 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include "map_struct.h"
 
-void	first_reading(t_map_inf *map_inf, int file_fd, \
+void	reading_map_file(t_map_inf *map_inf, int file_fd, \
 	t_map_list **head, t_map_list **tail);
-void	second_reading(t_map_inf *map_inf, \
+void	copy_map_from_list(t_map_inf *map_inf, \
 	t_map_list **head, t_map_list **tail);
 void	map_validity_check(t_map_inf *map_inf);
 void	get_identifier(t_identifier *identifier, int file_fd);

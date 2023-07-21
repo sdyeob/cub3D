@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:46:26 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 21:07:12 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 20:20:15 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	get_map_inf(t_map_inf *map_inf, int file_fd)
 
 	head = NULL;
 	tail = NULL;
-	first_reading(map_inf, file_fd, &head, &tail);
-	second_reading(map_inf, &head, &tail);
+	reading_map_file(map_inf, file_fd, &head, &tail);
+	copy_map_from_list(map_inf, &head, &tail);
 	map_validity_check(map_inf);
 }
 
-void	first_reading(t_map_inf *map_inf, int file_fd, \
+void	reading_map_file(t_map_inf *map_inf, int file_fd, \
 	t_map_list **head, t_map_list **tail)
 {
 	char	*line;

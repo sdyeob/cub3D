@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:51:00 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 20:54:02 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 20:23:08 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 static char	*map_copy_from_list(t_map_list *head, int width);
 
-void	second_reading(t_map_inf *map_inf, t_map_list **head, t_map_list **tail)
+void	copy_map_from_list(t_map_inf *map_inf, t_map_list \
+	**head, t_map_list **tail)
 {
 	int	i;
 

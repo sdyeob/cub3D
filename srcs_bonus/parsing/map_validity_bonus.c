@@ -6,52 +6,55 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:18:22 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 20:53:17 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 20:22:02 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_struct_bonus.h"
 #include "err_detect_bonus.h"
 
-static void	is_close(t_map_inf *map_inf, int i, int j);
+static void	is_close(t_map_inf *map_inf, int height, int width);
 
 void	map_validity_check(t_map_inf *map_inf)
 {
-	int	i;
-	int	j;
+	int	height;
+	int	width;
 
-	i = -1;
-	while (++i < map_inf->m_height)
+	height = -1;
+	while (++height < map_inf->m_height)
 	{
-		j = -1;
-		while (++j < map_inf->m_width)
+		width = -1;
+		while (++width < map_inf->m_width)
 		{
-			if (i == 0 || i == map_inf->m_height - 1 \
-				|| j == 0 || j == map_inf->m_width - 1)
+			if (height == 0 || height == map_inf->m_height - 1 \
+				|| width == 0 || width == map_inf->m_width - 1)
 			{
-				if (!(map_inf->map[i][j] == ' ' || map_inf->map[i][j] == '1'))
+				if (!(map_inf->map[height][width] == ' ' \
+					|| map_inf->map[height][width] == '1'))
 					err_detect("Map is weird");
 			}
-			if (map_inf->map[i][j] == ' ')
-				is_close(map_inf, i, j);
+			if (map_inf->map[height][width] == ' ')
+				is_close(map_inf, height, width);
 		}
 	}
 }
 
-static void	is_close(t_map_inf *map_inf, int i, int j)
+static void	is_close(t_map_inf *map_inf, int height, int width)
 {
-	const int	i_direct[4] = {1, -1, 0, 0};
-	const int	j_direct[4] = {0, 0, 1, -1};
+	const int	h_dir[4] = {1, -1, 0, 0};
+	const int	w_dir[4] = {0, 0, 1, -1};
 	int			k;
 
 	k = -1;
 	while (++k < 4)
 	{
-		if (0 <= i + i_direct[k] && i + i_direct[k] <= map_inf->m_height - 1 \
-			&& 0 <= j + j_direct[k] && j + j_direct[k] <= map_inf->m_width - 1)
+		if (0 <= height + h_dir[k] \
+			&& height + h_dir[k] <= map_inf->m_height - 1 \
+			&& 0 <= width + w_dir[k] \
+			&& width + w_dir[k] <= map_inf->m_width - 1)
 		{
-			if (!(map_inf->map[i + i_direct[k]][j + j_direct[k]] == ' ' \
-			|| map_inf->map[i + i_direct[k]][j + j_direct[k]] == '1'))
+			if (!(map_inf->map[height + h_dir[k]][width + w_dir[k]] == ' ' \
+			|| map_inf->map[height + h_dir[k]][width + w_dir[k]] == '1'))
 				err_detect("Map is unclosed");
 		}
 	}

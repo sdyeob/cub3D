@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:29:44 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/21 16:02:07 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 20:27:44 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	inspect_arg(int argc, char *argv[])
 	if (!(argv[1][arg_len - 4] == '.' && argv[1][arg_len - 3] == 'c' \
 		&& argv[1][arg_len - 2] == 'u' && argv[1][arg_len - 1] == 'b'))
 		err_detect("Argument is Wrong");
+	if (argv[1][arg_len - 5] == '/')
+		err_detect("Argument is Wrong");
 }
 
 int	inspect_arg_file(const char *filename)
@@ -38,7 +40,7 @@ int	inspect_arg_file(const char *filename)
 	return (fd);
 }
 
-int	inspect_splited_line(char **splited_line)
+int	get_splited_line_height(char **splited_line)
 {
 	int	i;
 
