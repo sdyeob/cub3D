@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:10:13 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 19:33:14 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 15:57:09 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	get_identifier(t_identifier *identifier, int file_fd)
 	}
 	free_splited_line(splited_line);
 	if (identifier_num != 6)
-		err_detect("Error : Few or More identifier");
+		err_detect("Few or More identifier");
 }
 
 static int	is_identifier(char *line)
@@ -74,7 +74,7 @@ static void	inspect_xpm_extension(char *splited_line)
 		&& splited_line[length - 3] == 'x' \
 		&& splited_line[length - 2] == 'p' \
 		&& splited_line[length - 1] == 'm'))
-		err_detect("Error : Information");
+		err_detect("Information");
 }
 
 static int	fill_identifier(t_identifier *identifier, \
@@ -117,13 +117,13 @@ static char	**get_splited_line(int file_fd, int *status)
 			remove_nl(line);
 			splited_line = ft_split(line, ' ');
 			if (inspect_splited_line(splited_line) != 2)
-				err_detect("Error : Identifier");
+				err_detect("Identifier");
 			*status = is_identifier(splited_line[0]);
 			if (*status == NOT_IDENTIFIER)
-				err_detect("Error : Identifier Or Information");
+				err_detect("Identifier Or Information");
 			return (free(line), splited_line);
 		}
 		else
-			err_detect("Error : Few Map information");
+			err_detect("Few Map information");
 	}
 }
