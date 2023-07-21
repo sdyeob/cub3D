@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/21 16:01:47 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/21 20:39:46 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ static void	init_color_move(t_draw *draw, t_map_inf *map_info)
 	draw->move.back = 0;
 	mlx_mouse_get_pos(draw->win_ptr, \
 	&draw->mouse_pos.x, &draw->mouse_pos.y);
-	mlx_mouse_hide();
+	draw->hold_mouse = 0;
 }
 
 static void	init_door(t_draw *draw)

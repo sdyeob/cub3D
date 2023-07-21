@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_struct_bonus.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:30:22 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 21:04:18 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 20:21:48 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ typedef struct s_draw
 	t_vec_d		pos;
 	t_vec_d		dir;
 	t_vec_i		mouse_pos;
+	int			hold_mouse;
 	char		hit_where;
 	t_side		side;
 	int			wall_height;

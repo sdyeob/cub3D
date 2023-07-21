@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_consts_bonus.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:17:54 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:48:51 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 19:56:43 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@
 # define KEY_ESC 53
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
+# define KEY_M 46
 # define KEY_W 13
 # define KEY_A 0
 # define KEY_S 1
