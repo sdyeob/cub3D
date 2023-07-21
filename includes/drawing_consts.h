@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_consts.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:17:54 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:04:56 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/21 15:43:38 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # define M_BPP 0.05 //BLOCK_PER_PIXEL
 # define M_PLAYER_RANGE 10
 # define M_SEP 20
-# define DOOR_COLOR 0xCC6633
 # define PLAYER_COLOR 0xFFFFFF
 # define WALL_COLOR 0x000099
 # define FLOOR_COLOR 0x0033FF
@@ -34,11 +33,6 @@
 # define VELOCITY 0.06
 # define ANGLE_VELOCITY 0.1
 # define MOUSE_ANGLE_RATIO 0.002
-
-# define DOOR_SEARCH_RANGE 0.9
-# define DOOR_MIN_DEGREE 0
-# define DOOR_MAX_DEGREE 35
-# define DOOR_XPM_PATH "test_files/door.xpm"
 
 //fixed value
 # define KEY_SPACE 49

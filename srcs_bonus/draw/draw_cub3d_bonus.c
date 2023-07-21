@@ -6,15 +6,17 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:52:19 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/21 15:38:23 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
+#include "err_detect.h"
 #include "map_struct_bonus.h"
 #include "drawing_consts_bonus.h"
 #include "drawing_struct_bonus.h"
 #include "drawing_bonus.h"
+#include "utils_bonus.h"
 
 static void	init_textures(t_draw *draw, t_map_inf *map_info);
 static void	init_color_move(t_draw *draw, t_map_inf *map_info);
@@ -68,22 +70,22 @@ static void	init_textures(t_draw *draw, t_map_inf *map_info)
 	t_img			*img;
 
 	img = &(draw->ewsn[east]);
-	img->img_ptr = mlx_xpm_file_to_image(draw->mlx_ptr, \
+	img->img_ptr = mlx_xpm_file_to_image_s(draw->mlx_ptr, \
 	map_info->identifier.e, &(img->width), &(img->height));
 	img->addr = mlx_get_data_addr(img->img_ptr, \
 	&(img->bits_per_pixel), &(img->line_length), &(img->endian));
 	img = &(draw->ewsn[west]);
-	img->img_ptr = mlx_xpm_file_to_image(draw->mlx_ptr, \
+	img->img_ptr = mlx_xpm_file_to_image_s(draw->mlx_ptr, \
 	map_info->identifier.w, &(img->width), &(img->height));
 	img->addr = mlx_get_data_addr(img->img_ptr, \
 	&(img->bits_per_pixel), &(img->line_length), &(img->endian));
 	img = &(draw->ewsn[south]);
-	img->img_ptr = mlx_xpm_file_to_image(draw->mlx_ptr, \
+	img->img_ptr = mlx_xpm_file_to_image_s(draw->mlx_ptr, \
 	map_info->identifier.s, &(img->width), &(img->height));
 	img->addr = mlx_get_data_addr(img->img_ptr, \
 	&(img->bits_per_pixel), &(img->line_length), &(img->endian));
 	img = &(draw->ewsn[north]);
-	img->img_ptr = mlx_xpm_file_to_image(draw->mlx_ptr, \
+	img->img_ptr = mlx_xpm_file_to_image_s(draw->mlx_ptr, \
 	map_info->identifier.n, &(img->width), &(img->height));
 	img->addr = mlx_get_data_addr(img->img_ptr, \
 	&(img->bits_per_pixel), &(img->line_length), &(img->endian));
@@ -113,7 +115,7 @@ static void	init_door(t_draw *draw)
 	t_img	*img;
 
 	img = &(draw->door.img);
-	img->img_ptr = mlx_xpm_file_to_image(draw->mlx_ptr, \
+	img->img_ptr = mlx_xpm_file_to_image_s(draw->mlx_ptr, \
 	DOOR_XPM_PATH, &(img->width), &(img->height));
 	img->addr = mlx_get_data_addr(img->img_ptr, \
 	&(img->bits_per_pixel), &(img->line_length), &(img->endian));
