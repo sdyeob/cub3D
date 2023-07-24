@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:40:24 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 20:52:53 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/24 20:47:32 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ t_vec_d	get_plane_dir_vec(t_vec_d dir)
 {
 	t_vec_d	plane;
 
-	plane.x = dir.y;
-	plane.y = (-dir.x);
+	plane.x = (-dir.y);
+	plane.y = dir.x;
 	return (plane);
 }
 
@@ -28,8 +28,8 @@ t_vec_d	rotate_vec(t_vec_d dir, double angle)
 {
 	t_vec_d	ro;
 
-	ro.x = cos(angle) * dir.x + sin(angle) * dir.y;
-	ro.y = -sin(angle) * dir.x + cos(angle) * dir.y;
+	ro.x = cos(angle) * dir.x - sin(angle) * dir.y;
+	ro.y = sin(angle) * dir.x + cos(angle) * dir.y;
 	return (ro);
 }
 

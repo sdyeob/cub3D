@@ -6,7 +6,7 @@
 /*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/21 20:39:46 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/24 20:32:27 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ static void	init_draw(t_draw *draw, t_map_inf *map_info)
 	else if (map_info->player_direct == 'W')
 		draw->dir.x = -1;
 	else if (map_info->player_direct == 'S')
-		draw->dir.y = -1;
-	else
 		draw->dir.y = 1;
+	else
+		draw->dir.y = -1;
 	init_textures(draw, map_info);
 	init_color_move(draw, map_info);
 	init_door(draw);
