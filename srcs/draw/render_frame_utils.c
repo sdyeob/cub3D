@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_frame_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 22:29:44 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 21:11:18 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/24 20:57:52 by seunghoy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,9 @@ static void	dda(t_cal *cal, t_draw *draw)
 			cal->side_ratio_y += cal->delta_ratio_y;
 			cal->map_pos.y += cal->step.y;
 			if (cal->ray_dir.y > 0)
-				draw->side = north;
-			else
 				draw->side = south;
+			else
+				draw->side = north;
 		}
 		if (draw->map[cal->map_pos.y][cal->map_pos.x] > '0')
 			cal->hit = 0;
@@ -128,6 +128,6 @@ void	cal_tex_x(t_cal *cal, t_draw *draw)
 		draw->pos.x + cal->wall_camera_plane_dist * cal->ray_dir.x;
 	cal->wall_x -= floor(cal->wall_x);
 	draw->tex_x = (int)(cal->wall_x * draw->ewsn[draw->side].width);
-	if (draw->side == east || draw->side == south)
+	if (draw->side == west || draw->side == south)
 		draw->tex_x = draw->ewsn[draw->side].width - draw->tex_x - 1;
 }
