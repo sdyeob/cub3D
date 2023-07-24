@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:46:26 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/21 20:20:15 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/24 21:09:49 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 static int	line_check(t_map_inf *map_inf, char *line, int line_cnt);
 static char	*skip_before_map_nl(int file_fd);
-static int	skip_after_map_nl(int file_fd);
+static void	skip_after_map_nl(int file_fd);
 
 void	get_map_inf(t_map_inf *map_inf, int file_fd)
 {
@@ -46,8 +46,8 @@ void	reading_map_file(t_map_inf *map_inf, int file_fd, \
 	{
 		if (line[0] == '\n')
 		{
-			if (free(line), skip_after_map_nl(file_fd))
-				err_detect("new line in map!");
+			free(line);
+			skip_after_map_nl(file_fd);
 			break ;
 		}
 		length = line_check(map_inf, line, line_cnt);
@@ -82,7 +82,7 @@ static char	*skip_before_map_nl(int file_fd)
 	}
 }
 
-static int	skip_after_map_nl(int file_fd)
+static void	skip_after_map_nl(int file_fd)
 {
 	char	*line;
 
@@ -96,11 +96,11 @@ static int	skip_after_map_nl(int file_fd)
 			else
 			{
 				free(line);
-				return (1);
+				err_detect("new line in map!");
 			}
 		}
 		else
-			return (0);
+			return ;
 	}
 }
 

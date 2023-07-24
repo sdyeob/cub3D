@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 16:47:08 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/21 15:52:01 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/24 21:17:54 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,14 @@ void	*mlx_xpm_file_to_image_s(void *xvar, char *file, \
 	if (re == NULL)
 		err_detect("Non exist file");
 	return (re);
+}
+
+int	get_splited_line_height(char **splited_line)
+{
+	int	i;
+
+	i = -1;
+	while (splited_line[++i])
+		;
+	return (i);
 }

@@ -6,13 +6,12 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:10:13 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/21 20:29:03 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/24 21:19:54 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "err_detect_bonus.h"
-#include "inspect_bonus.h"
 #include "libft.h"
 #include "gnl.h"
 #include "map_struct_bonus.h"
@@ -113,19 +112,19 @@ static char	**get_splited_line(int file_fd, int *status)
 		line = get_next_line(file_fd);
 		if (line)
 		{
-			if (line[0] == '\n')
+			if (line[0] != '\n')
 			{
+				remove_nl(line);
+				splited_line = ft_split(line, ' ');
+				if (get_splited_line_height(splited_line) != 2)
+					err_detect("Identifier");
+				*status = is_identifier(splited_line[0]);
+				if (*status == NOT_IDENTIFIER)
+					err_detect("Identifier Or Information");
 				free(line);
-				continue ;
+				return (splited_line);
 			}
-			remove_nl(line);
-			splited_line = ft_split(line, ' ');
-			if (get_splited_line_height(splited_line) != 2)
-				err_detect("Identifier");
-			*status = is_identifier(splited_line[0]);
-			if (*status == NOT_IDENTIFIER)
-				err_detect("Identifier Or Information");
-			return (free(line), splited_line);
+			free(line);
 		}
 		else
 			err_detect("Few Map information");

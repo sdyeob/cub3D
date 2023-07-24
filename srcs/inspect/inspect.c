@@ -6,7 +6,7 @@
 /*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 20:29:44 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/21 20:27:44 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/24 21:19:04 by dongyshi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,4 @@ int	inspect_arg_file(const char *filename)
 	if (fd == -1)
 		err_detect("Filename is Wrong");
 	return (fd);
-}
-
-int	get_splited_line_height(char **splited_line)
-{
-	int	i;
-
-	i = -1;
-	while (splited_line[++i])
-		;
-	return (i);
 }
