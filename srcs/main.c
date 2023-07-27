@@ -3,46 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:35:43 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/21 16:03:23 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/27 22:11:14 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "inspect.h"
 #include "parsing.h"
-#include "map_struct.h"
+#include "parsing_struct.h"
 #include "drawing.h"
-
-void	init_map_inf(t_map_inf *map_inf)
-{
-	map_inf->m_height = -1;
-	map_inf->m_width = -1;
-	map_inf->map = NULL;
-	map_inf->player_direct = 'P';
-	map_inf->player_loc_x = -1;
-	map_inf->player_loc_y = -1;
-	map_inf->identifier.f[0] = -1;
-	map_inf->identifier.c[0] = -1;
-	map_inf->identifier.n = NULL;
-	map_inf->identifier.w = NULL;
-	map_inf->identifier.e = NULL;
-	map_inf->identifier.s = NULL;
-}
 
 int	main(int argc, char *argv[])
 {
-	int			file_fd;
 	t_map_inf	map_inf;
 
-	inspect_arg(argc, argv);
-	file_fd = inspect_arg_file(argv[1]);
-	init_map_inf(&map_inf);
-	get_identifier(&(map_inf.identifier), file_fd);
-	get_map_inf(&map_inf, file_fd);
-	close(file_fd);
+	map_inf = parsing_map_file(argc, argv);
 	draw_cub3d(&map_inf);
 	return (0);
 }

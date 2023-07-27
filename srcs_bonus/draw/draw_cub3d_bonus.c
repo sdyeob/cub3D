@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   draw_cub3d_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/24 20:32:27 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/27 21:35:16 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "err_detect_bonus.h"
-#include "map_struct_bonus.h"
+#include "parsing_struct_bonus.h"
 #include "drawing_consts_bonus.h"
 #include "drawing_struct_bonus.h"
 #include "drawing_bonus.h"

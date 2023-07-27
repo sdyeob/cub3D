@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_color_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:45:32 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 20:53:23 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/27 22:12:45 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "err_detect_bonus.h"
-#include "map_struct_bonus.h"
+#include "parsing_struct_bonus.h"
 #include "libft.h"
-#include "map_consts_bonus.h"
 
-static int	this_is_color(char *splited_line, int idx);
-static void	get_color_inf(t_identifier *identifier, \
+static int	get_color_inf(char *splited_line, int idx);
+static void	set_color_inf(t_identifier *identifier, \
 	char *splited_line, int status);
 
 void	get_color(t_identifier *identifier, char *splited_line, int status)
@@ -44,10 +43,10 @@ void	get_color(t_identifier *identifier, char *splited_line, int status)
 	}
 	if (comma_cnt != 2 || length == 0 || length > 3)
 		err_detect("Information is Wrong");
-	get_color_inf(identifier, splited_line, status);
+	set_color_inf(identifier, splited_line, status);
 }
 
-static void	get_color_inf(t_identifier *identifier, \
+static void	set_color_inf(t_identifier *identifier, \
 	char *splited_line, int status)
 {
 	int	i;
@@ -56,13 +55,13 @@ static void	get_color_inf(t_identifier *identifier, \
 	while (++i < 3)
 	{
 		if (status == FLOOR)
-			identifier->f[i] = this_is_color(splited_line, i);
+			identifier->f[i] = get_color_inf(splited_line, i);
 		else if (status == CEIL)
-			identifier->c[i] = this_is_color(splited_line, i);
+			identifier->c[i] = get_color_inf(splited_line, i);
 	}
 }
 
-static int	this_is_color(char *splited_line, int idx)
+static int	get_color_inf(char *splited_line, int idx)
 {
 	int	i;
 	int	comma_cnt;

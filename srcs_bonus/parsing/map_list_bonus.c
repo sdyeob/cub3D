@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   map_list_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:36:58 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/20 20:53:13 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/27 21:35:16 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-#include "map_struct_bonus.h"
+#include "parsing_struct_bonus.h"
 #include "err_detect_bonus.h"
 
 void	add_list_back(t_map_list **head, t_map_list **tail, \

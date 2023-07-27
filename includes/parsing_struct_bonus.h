@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_struct_bonus.h                                 :+:      :+:    :+:   */
+/*   parsing_struct_bonus.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 22:14:21 by sindong-yeo       #+#    #+#             */
-/*   Updated: 2023/07/20 20:49:14 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/27 22:15:02 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_STRUCT_BONUS_H
-# define MAP_STRUCT_BONUS_H
+#ifndef PARSING_STRUCT_BONUS_H
+# define PARSING_STRUCT_BONUS_H
 
 typedef struct s_map_list	t_map_list;
+
+enum	e_identifier
+{
+	NOT_IDENTIFIER,
+	NORTH,
+	WEST,
+	EAST,
+	SOUTH,
+	FLOOR,
+	CEIL
+};
 
 struct s_map_list
 {

@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_struct.h                                       :+:      :+:    :+:   */
+/*   parsing_struct.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 22:14:21 by sindong-yeo       #+#    #+#             */
-/*   Updated: 2023/07/20 17:56:32 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/27 22:14:41 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_STRUCT_H
-# define MAP_STRUCT_H
+#ifndef PARSING_STRUCT_H
+# define PARSING_STRUCT_H
 
 typedef struct s_map_list	t_map_list;
+
+enum	e_identifier
+{
+	NOT_IDENTIFIER,
+	NORTH,
+	WEST,
+	EAST,
+	SOUTH,
+	FLOOR,
+	CEIL
+};
 
 struct s_map_list
 {

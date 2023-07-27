@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_map2_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:51:00 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/21 20:23:08 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/27 21:35:16 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing_bonus.h"
 #include "err_detect_bonus.h"
-#include "map_struct_bonus.h"
+#include "parsing_struct_bonus.h"
 #include "libft.h"
 #include <stdlib.h>
 
