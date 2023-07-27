@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   draw_cub3d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 19:43:01 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/24 20:56:04 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/27 21:33:59 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "err_detect.h"
-#include "map_struct.h"
+#include "parsing_struct.h"
 #include "drawing_consts.h"
 #include "drawing_struct.h"
 #include "drawing.h"

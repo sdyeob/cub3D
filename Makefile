@@ -12,16 +12,14 @@ DYLD_LIBRARY_PATH := ./minilibx_opengl_20191021
 INCLUDES := includes
 
 SRCS := $(addprefix srcs/, main.c err_detect.c utils.c ) \
-		$(addprefix srcs/inspect/, inspect.c ) \
-		$(addprefix srcs/parsing/, parsing_identifier.c \
+		$(addprefix srcs/parsing/, parsing.c parsing_identifier.c \
 			parsing_color.c parsing_map.c parsing_map2.c \
 			map_list.c map_validity.c ) \
 		$(addprefix srcs/draw/, color.c draw_cub3d.c hook.c \
 		render_frame.c render_frame_utils.c vector.c move.c)
 
 SRCS_B := $(addprefix srcs_bonus/, main_bonus.c err_detect_bonus.c utils_bonus.c ) \
-		$(addprefix srcs_bonus/inspect/, inspect_bonus.c ) \
-		$(addprefix srcs_bonus/parsing/, parsing_identifier_bonus.c \
+		$(addprefix srcs_bonus/parsing/, parsing_bonus.c parsing_identifier_bonus.c \
 			parsing_color_bonus.c parsing_map_bonus.c parsing_map2_bonus.c \
 			map_list_bonus.c map_validity_bonus.c ) \
 		$(addprefix srcs_bonus/draw/, color_bonus.c draw_cub3d_bonus.c hook_bonus.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 19:35:27 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/20 21:04:12 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/27 21:35:16 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define DRAWING_BONUS_H
 
 # include "drawing_struct_bonus.h"
-# include "map_struct_bonus.h"
+# include "parsing_struct_bonus.h"
 
 //draw_cub3d.c
 void	draw_cub3d(t_map_inf *map_info);

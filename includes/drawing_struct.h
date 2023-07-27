@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_struct.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunghoy <seunghoy@student.42.kr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:30:22 by seunghoy          #+#    #+#             */
-/*   Updated: 2023/07/21 20:22:41 by seunghoy         ###   ########.fr       */
+/*   Updated: 2023/07/27 21:33:59 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DRAWING_STRUCT_H
 # define DRAWING_STRUCT_H
 
-# include "map_struct.h"
+# include "parsing_struct.h"
 
 typedef struct s_vec_d
 {

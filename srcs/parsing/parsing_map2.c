@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_map2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 14:51:00 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/21 20:16:04 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/27 21:33:59 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 #include "err_detect.h"
-#include "map_struct.h"
+#include "parsing_struct.h"
 #include "libft.h"
 #include <stdlib.h>
 

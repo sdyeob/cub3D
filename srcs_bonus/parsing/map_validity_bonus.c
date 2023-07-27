@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   map_validity_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongyshi <dongyshi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:18:22 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/21 20:22:02 by dongyshi         ###   ########.fr       */
+/*   Updated: 2023/07/27 21:35:16 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_struct_bonus.h"
+#include "parsing_struct_bonus.h"
 #include "err_detect_bonus.h"
 
 static void	is_close(t_map_inf *map_inf, int height, int width);
