@@ -6,7 +6,7 @@
 /*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 16:02:24 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/27 22:12:48 by sindong-yeo      ###   ########.fr       */
+/*   Updated: 2023/07/27 22:46:48 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	get_color_inf(char *splited_line, int idx);
 static void	set_color_inf(t_identifier *identifier, \
 	char *splited_line, int status);
 
-void	get_color(t_identifier *identifier, char *splited_line, int status)
+void	set_color(t_identifier *identifier, char *splited_line, int status)
 {
 	int	i;
 	int	comma_cnt;

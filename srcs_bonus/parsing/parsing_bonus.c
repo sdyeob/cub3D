@@ -6,7 +6,7 @@
 /*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 21:47:32 by sindong-yeo       #+#    #+#             */
-/*   Updated: 2023/07/27 22:09:30 by sindong-yeo      ###   ########.fr       */
+/*   Updated: 2023/07/27 22:47:45 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ t_map_inf	parsing_map_file(int argc, char *argv[])
 	inspect_arg(argc, argv);
 	fildes = inspect_arg_file(argv[1]);
 	map_inf = init_map_inf();
-	get_identifier(&(map_inf.identifier), fildes);
-	get_map_inf(&map_inf, fildes);
+	set_identifier(&(map_inf.identifier), fildes);
+	set_map_inf(&map_inf, fildes);
 	close(fildes);
 	return (map_inf);
 }

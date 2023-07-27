@@ -6,7 +6,7 @@
 /*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 17:46:26 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/27 21:33:59 by sindong-yeo      ###   ########.fr       */
+/*   Updated: 2023/07/27 22:45:43 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	line_check(t_map_inf *map_inf, char *line, int line_cnt);
 static char	*skip_before_map_nl(int file_fd);
 static void	skip_after_map_nl(int file_fd);
 
-void	get_map_inf(t_map_inf *map_inf, int file_fd)
+void	set_map_inf(t_map_inf *map_inf, int file_fd)
 {
 	t_map_list	*head;
 	t_map_list	*tail;
