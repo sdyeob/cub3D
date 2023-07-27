@@ -6,7 +6,7 @@
 /*   By: sindong-yeob <sindong-yeob@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 18:10:13 by dongyshi          #+#    #+#             */
-/*   Updated: 2023/07/27 22:16:51 by sindong-yeo      ###   ########.fr       */
+/*   Updated: 2023/07/27 22:46:40 by sindong-yeo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	fill_identifier(t_identifier *identifier, \
 	char *splited_line, int status);
 static void	inspect_xpm_extension(char *splited_line);
 
-void	get_identifier(t_identifier *identifier, int file_fd)
+void	set_identifier(t_identifier *identifier, int file_fd)
 {
 	char	**splited_line;
 	int		identifier_num;
@@ -107,9 +107,9 @@ static int	fill_identifier(t_identifier *identifier, \
 	else if (status == SOUTH && !identifier->s)
 		identifier->s = ft_substr(splited_line, 0, ft_strlen(splited_line));
 	else if (status == FLOOR && identifier->f[0] == -1)
-		get_color(identifier, splited_line, status);
+		set_color(identifier, splited_line, status);
 	else if (status == CEIL && identifier->c[0] == -1)
-		get_color(identifier, splited_line, status);
+		set_color(identifier, splited_line, status);
 	else
 		return (0);
 	return (1);
